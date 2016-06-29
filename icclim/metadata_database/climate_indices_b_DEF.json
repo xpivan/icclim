@@ -1,0 +1,2303 @@
+[
+  {
+    "cf_level": "CF-1.6", 
+    "varname": "fd", 
+    "n_thresholds": "1", 
+    "n_inputs": "1", 
+    "freq": "ann/sea/mon", 
+    "input": [
+      {
+        "standard_name": "air_temperature", 
+        "known_variables": [
+          "tasmin", 
+          "tasmin-adjust", 
+          "tmin", 
+          "tn", 
+          "mint"
+        ], 
+        "cell_method": "time: minimum within days"
+      }
+    ], 
+    "et": {
+      "comment": "count of days when daily minimum temperature is below 0 degC", 
+      "long_name": "Frost days", 
+      "short_name": "fd", 
+      "definition": "Count when TN < 0C"
+    }, 
+    "threshold": [
+      {
+        "units": "degree_Celsius", 
+        "value": "0", 
+        "logic": "<"
+      }
+    ], 
+    "output": {
+      "reference": "ETCCDI", 
+      "canonical_units": "1", 
+      "cell_method": "time: minimum within days time: sum over days", 
+      "long_name": "Number of Frost Days (Tmin < 0C)", 
+      "standard_name": "number_of_days_with_air_temperature_below_threshold", 
+      "legend_units": "days", 
+      "units": "1"
+    }
+  }, 
+  {
+    "cf_level": "CF-1.6", 
+    "varname": "tnlt2", 
+    "n_thresholds": "1", 
+    "n_inputs": "1", 
+    "freq": "ann/sea/mon", 
+    "input": [
+      {
+        "standard_name": "air_temperature", 
+        "known_variables": [
+          "tasmin", 
+          "tasmin-adjust", 
+          "tmin", 
+          "tn", 
+          "mint"
+        ], 
+        "cell_method": "time: minimum within days"
+      }
+    ], 
+    "et": {
+      "comment": "count of days when daily minimum temperature is below plus 2 degC", 
+      "long_name": "Frost days 2", 
+      "short_name": "fd2", 
+      "definition": "Count when TN < 2C"
+    }, 
+    "threshold": [
+      {
+        "units": "degree_Celsius", 
+        "value": "2", 
+        "logic": "<"
+      }
+    ], 
+    "output": {
+      "reference": "ET-SCI", 
+      "canonical_units": "1", 
+      "cell_method": "time: minimum within days time: sum over days", 
+      "long_name": "Number of Frost Days (Tmin < +2C)", 
+      "standard_name": "number_of_days_with_air_temperature_below_threshold", 
+      "legend_units": "days", 
+      "units": "1"
+    }
+  }, 
+  {
+    "cf_level": "CF-1.6", 
+    "varname": "tnltm2", 
+    "n_thresholds": "1", 
+    "n_inputs": "1", 
+    "freq": "ann/sea/mon", 
+    "input": [
+      {
+        "standard_name": "air_temperature", 
+        "known_variables": [
+          "tasmin", 
+          "tasmin-adjust", 
+          "tmin", 
+          "tn", 
+          "mint"
+        ], 
+        "cell_method": "time: minimum within days"
+      }
+    ], 
+    "et": {
+      "comment": "count of days when daily minimum temperature is below minus 2 degC", 
+      "long_name": "Hard freeze", 
+      "short_name": "fdm2", 
+      "definition": "Count when TN < -2C"
+    }, 
+    "threshold": [
+      {
+        "units": "degree_Celsius", 
+        "value": "-2", 
+        "logic": "<"
+      }
+    ], 
+    "output": {
+      "reference": "ET-SCI", 
+      "canonical_units": "1", 
+      "cell_method": "time: minimum within days time: sum over days", 
+      "long_name": "Number of Hard Freeze Days (Tmin < -2C)", 
+      "standard_name": "number_of_days_with_air_temperature_below_threshold", 
+      "legend_units": "days", 
+      "units": "1"
+    }
+  }, 
+  {
+    "cf_level": "CF-1.6", 
+    "varname": "tnltm20", 
+    "n_thresholds": "1", 
+    "n_inputs": "1", 
+    "freq": "ann/sea/mon", 
+    "input": [
+      {
+        "standard_name": "air_temperature", 
+        "known_variables": [
+          "tasmin", 
+          "tasmin-adjust", 
+          "tmin", 
+          "tn", 
+          "mint"
+        ], 
+        "cell_method": "time: minimum within days"
+      }
+    ], 
+    "et": {
+      "comment": "count of days when daily minimum temperature is below minus 20 degC", 
+      "long_name": "Very hard freeze", 
+      "short_name": "fdm20", 
+      "definition": "Count when TN < -20C"
+    }, 
+    "threshold": [
+      {
+        "units": "degree_Celsius", 
+        "value": "-20", 
+        "logic": "<"
+      }
+    ], 
+    "output": {
+      "reference": "ET-SCI", 
+      "canonical_units": "1", 
+      "cell_method": "time: minimum within days time: sum over days", 
+      "long_name": "Number of Very Hard Freeze Days (Tmin < -20C)", 
+      "standard_name": "number_of_days_with_air_temperature_below_threshold", 
+      "legend_units": "days", 
+      "units": "1"
+    }
+  }, 
+  {
+    "cf_level": "CF-1.6", 
+    "varname": "id", 
+    "n_thresholds": "1", 
+    "n_inputs": "1", 
+    "freq": "ann/sea/mon", 
+    "input": [
+      {
+        "standard_name": "air_temperature", 
+        "known_variables": [
+          "tasmax", 
+          "tasmax-adjust", 
+          "tmax", 
+          "tx", 
+          "maxt"
+        ], 
+        "cell_method": "time: maximum within days"
+      }
+    ], 
+    "et": {
+      "comment": "count of days when daily maximum temperature is below 0 degC", 
+      "long_name": "Ice days", 
+      "short_name": "id", 
+      "definition": "Count when TX < 0C"
+    }, 
+    "threshold": [
+      {
+        "units": "degree_Celsius", 
+        "value": "0", 
+        "logic": "<"
+      }
+    ], 
+    "output": {
+      "reference": "ETCCDI", 
+      "canonical_units": "1", 
+      "cell_method": "time: maximum within days time: sum over days", 
+      "long_name": "Number of Ice Days (Tmax < 0C)", 
+      "standard_name": "number_of_days_with_air_temperature_below_threshold", 
+      "legend_units": "days", 
+      "units": "1"
+    }
+  }, 
+  {
+    "cf_level": "CF-1.6", 
+    "varname": "su", 
+    "n_thresholds": "1", 
+    "n_inputs": "1", 
+    "freq": "ann/sea/mon", 
+    "input": [
+      {
+        "standard_name": "air_temperature", 
+        "known_variables": [
+          "tasmax", 
+          "tasmax-adjust", 
+          "tmax", 
+          "tx", 
+          "maxt"
+        ], 
+        "cell_method": "time: maximum within days"
+      }
+    ], 
+    "et": {
+      "comment": "count of days when daily maximum temperature is above plus 25 degC", 
+      "long_name": "Summer days", 
+      "short_name": "su", 
+      "definition": "Count when TX > 25C"
+    }, 
+    "threshold": [
+      {
+        "units": "degree_Celsius", 
+        "value": "25", 
+        "logic": ">"
+      }
+    ], 
+    "output": {
+      "reference": "ETCCDI", 
+      "canonical_units": "1", 
+      "cell_method": "time: maximum within days time: sum over days", 
+      "long_name": "Number of Summer Days (Tmax > 25C)", 
+      "standard_name": "number_of_days_with_air_temperature_above_threshold", 
+      "legend_units": "days", 
+      "units": "1"
+    }
+  }, 
+  {
+    "cf_level": "CF-1.6", 
+    "varname": "txge30", 
+    "n_thresholds": "1", 
+    "n_inputs": "1", 
+    "freq": "ann/sea/mon", 
+    "input": [
+      {
+        "standard_name": "air_temperature", 
+        "known_variables": [
+          "tasmax", 
+          "tasmax-adjust", 
+          "tmax", 
+          "tx", 
+          "maxt"
+        ], 
+        "cell_method": "time: maximum within days"
+      }
+    ], 
+    "et": {
+      "comment": "count of days when daily maximum temperature is above or equal plus 30 degC", 
+      "long_name": "Hot days", 
+      "short_name": "su30", 
+      "definition": "Count when TX >= 30C"
+    }, 
+    "threshold": [
+      {
+        "units": "degree_Celsius", 
+        "value": "30", 
+        "logic": ">="
+      }
+    ], 
+    "output": {
+      "reference": "ET-SCI", 
+      "canonical_units": "1", 
+      "cell_method": "time: maximum within days time: sum over days", 
+      "long_name": "Number of Hot Days (Tmax >= 30C)", 
+      "standard_name": "number_of_days_with_air_temperature_above_or equal_threshold", 
+      "legend_units": "days", 
+      "units": "1"
+    }
+  }, 
+  {
+    "cf_level": "CF-1.6", 
+    "varname": "txge35", 
+    "n_thresholds": "1", 
+    "n_inputs": "1", 
+    "freq": "ann/sea/mon", 
+    "input": [
+      {
+        "standard_name": "air_temperature", 
+        "known_variables": [
+          "tasmax", 
+          "tasmax-adjust", 
+          "tmax", 
+          "tx", 
+          "maxt"
+        ], 
+        "cell_method": "time: maximum within days"
+      }
+    ], 
+    "et": {
+      "comment": "count of days when daily maximum temperature is above or equal plus 35 degC", 
+      "long_name": "Very hot days", 
+      "short_name": "su35", 
+      "definition": "Count when TX >= 35C"
+    }, 
+    "threshold": [
+      {
+        "units": "degree_Celsius", 
+        "value": "35", 
+        "logic": ">="
+      }
+    ], 
+    "output": {
+      "reference": "ET-SCI", 
+      "canonical_units": "1", 
+      "cell_method": "time: maximum within days time: sum over days", 
+      "long_name": "Number of Very Hot Days (Tmax >= 35C)", 
+      "standard_name": "number_of_days_with_air_temperature_above_or equal_threshold", 
+      "legend_units": "days", 
+      "units": "1"
+    }
+  }, 
+  {
+    "cf_level": "CF-1.6", 
+    "varname": "tr", 
+    "n_thresholds": "1", 
+    "n_inputs": "1", 
+    "freq": "ann/sea/mon", 
+    "input": [
+      {
+        "standard_name": "air_temperature", 
+        "known_variables": [
+          "tasmin", 
+          "tasmin-adjust", 
+          "tmin", 
+          "tn", 
+          "mint"
+        ], 
+        "cell_method": "time: minimum within days"
+      }
+    ], 
+    "et": {
+      "comment": "count of days when daily minimum temperature is above plus 20 degC", 
+      "long_name": "Tropical nights", 
+      "short_name": "tr", 
+      "definition": "Count when TN > 20C"
+    }, 
+    "threshold": [
+      {
+        "units": "degree_Celsius", 
+        "value": "20", 
+        "logic": ">"
+      }
+    ], 
+    "output": {
+      "reference": "ETCCDI", 
+      "canonical_units": "1", 
+      "cell_method": "time: minimum within days time: sum over days", 
+      "long_name": "Number of Tropical Nights (Tmin > 20C)", 
+      "standard_name": "number_of_days_with_air_temperature_above_threshold", 
+      "legend_units": "days", 
+      "units": "1"
+    }
+  }, 
+  {
+    "cf_level": "CF-1.6", 
+    "varname": "tmge5", 
+    "n_thresholds": "1", 
+    "n_inputs": "1", 
+    "freq": "ann/sea/mon", 
+    "input": [
+      {
+        "standard_name": "air_temperature", 
+        "known_variables": [
+          "tas", 
+          "tas-adjust", 
+          "tmean", 
+          "tm", 
+          "tg", 
+          "meant"
+        ], 
+        "cell_method": "time: mean within days"
+      }
+    ], 
+    "et": {
+      "comment": "count of days when daily mean temperature is above plus 5 degC", 
+      "long_name": "TM above 5C", 
+      "short_name": "tm5a", 
+      "definition": "Count when TM >= 5C"
+    }, 
+    "threshold": [
+      {
+        "units": "degree_Celsius", 
+        "value": "5", 
+        "logic": ">"
+      }
+    ], 
+    "output": {
+      "reference": "ET-SCI", 
+      "canonical_units": "1", 
+      "cell_method": "time: mean within days time: sum over days", 
+      "long_name": "Number of days with Tmean >= 5C", 
+      "standard_name": "number_of_days_with_air_temperature_above_or_equal_threshold", 
+      "legend_units": "days", 
+      "units": "1"
+    }
+  }, 
+  {
+    "cf_level": "CF-1.6", 
+    "varname": "tmlt5", 
+    "n_thresholds": "1", 
+    "n_inputs": "1", 
+    "freq": "ann/sea/mon", 
+    "input": [
+      {
+        "standard_name": "air_temperature", 
+        "known_variables": [
+          "tas", 
+          "tas-adjust", 
+          "tmean", 
+          "tm", 
+          "tg", 
+          "meant"
+        ], 
+        "cell_method": "time: mean within days"
+      }
+    ], 
+    "et": {
+      "comment": "count of days when daily mean temperature is below plus 5 degC", 
+      "long_name": "TM below 5C", 
+      "short_name": "tm5b", 
+      "definition": "Count when TM < 5C"
+    }, 
+    "threshold": [
+      {
+        "units": "degree_Celsius", 
+        "value": "5", 
+        "logic": "<"
+      }
+    ], 
+    "output": {
+      "reference": "ET-SCI", 
+      "canonical_units": "1", 
+      "cell_method": "time: mean within days time: sum over days", 
+      "long_name": "Number of days with Tmean < 5C", 
+      "standard_name": "number_of_days_with_air_temperature_below_threshold", 
+      "legend_units": "days", 
+      "units": "1"
+    }
+  }, 
+  {
+    "cf_level": "CF-1.6", 
+    "varname": "tmge10", 
+    "n_thresholds": "1", 
+    "n_inputs": "1", 
+    "freq": "ann/sea/mon", 
+    "input": [
+      {
+        "standard_name": "air_temperature", 
+        "known_variables": [
+          "tas", 
+          "tas-adjust", 
+          "tmean", 
+          "tm", 
+          "tg", 
+          "meant"
+        ], 
+        "cell_method": "time: mean within days"
+      }
+    ], 
+    "et": {
+      "comment": "count of days when daily mean temperature is above plus 10 degC", 
+      "long_name": "TM above 10C", 
+      "short_name": "tm10a", 
+      "definition": "Count when TM >= 10C"
+    }, 
+    "threshold": [
+      {
+        "units": "degree_Celsius", 
+        "value": "10", 
+        "logic": ">"
+      }
+    ], 
+    "output": {
+      "reference": "ET-SCI", 
+      "canonical_units": "1", 
+      "cell_method": "time: mean within days time: sum over days", 
+      "long_name": "Number of days with Tmean >= 10C", 
+      "standard_name": "number_of_days_with_air_temperature_above_or_equal_threshold", 
+      "legend_units": "days", 
+      "units": "1"
+    }
+  }, 
+  {
+    "cf_level": "CF-1.6", 
+    "varname": "tmlt10", 
+    "n_thresholds": "1", 
+    "n_inputs": "1", 
+    "freq": "ann/sea/mon", 
+    "input": [
+      {
+        "standard_name": "air_temperature", 
+        "known_variables": [
+          "tas", 
+          "tas-adjust", 
+          "tmean", 
+          "tm", 
+          "tg", 
+          "meant"
+        ], 
+        "cell_method": "time: mean within days"
+      }
+    ], 
+    "et": {
+      "comment": "count of days when daily mean temperature is below plus 10 degC", 
+      "long_name": "TM below 10C", 
+      "short_name": "tm10b", 
+      "definition": "Count when TM < 10C"
+    }, 
+    "threshold": [
+      {
+        "units": "degree_Celsius", 
+        "value": "10", 
+        "logic": "<"
+      }
+    ], 
+    "output": {
+      "reference": "ET-SCI", 
+      "canonical_units": "1", 
+      "cell_method": "time: mean within days time: sum over days", 
+      "long_name": "Number of days with Tmean < 10C", 
+      "standard_name": "number_of_days_with_air_temperature_below_threshold", 
+      "legend_units": "days", 
+      "units": "1"
+    }
+  }, 
+  {
+    "cf_level": "CF-1.6", 
+    "varname": "tngt#", 
+    "n_thresholds": "1", 
+    "n_inputs": "1", 
+    "freq": "ann/sea/mon", 
+    "input": [
+      {
+        "standard_name": "air_temperature", 
+        "known_variables": [
+          "tasmin", 
+          "tasmin-adjust", 
+          "tmin", 
+          "tn", 
+          "mint"
+        ], 
+        "cell_method": "time: minimum within days"
+      }
+    ], 
+    "et": {
+      "comment": "count of days when daily minimum temperature is above # degC", 
+      "long_name": "_", 
+      "short_name": "_", 
+      "definition": "_"
+    }, 
+    "threshold": [
+      {
+        "units": "degree_Celsius", 
+        "value": "#", 
+        "logic": ">"
+      }
+    ], 
+    "output": {
+      "reference": "_", 
+      "canonical_units": "1", 
+      "cell_method": "time: minimum within days time: sum over days", 
+      "long_name": "Number of days with Tmin > #C", 
+      "standard_name": "number_of_days_with_air_temperature_above_threshold", 
+      "legend_units": "days", 
+      "units": "1"
+    }
+  }, 
+  {
+    "cf_level": "CF-1.6", 
+    "varname": "tnlt#", 
+    "n_thresholds": "1", 
+    "n_inputs": "1", 
+    "freq": "ann/sea/mon", 
+    "input": [
+      {
+        "standard_name": "air_temperature", 
+        "known_variables": [
+          "tasmin", 
+          "tasmin-adjust", 
+          "tmin", 
+          "tn", 
+          "mint"
+        ], 
+        "cell_method": "time: minimum within days"
+      }
+    ], 
+    "et": {
+      "comment": "count of days when daily minimum temperature is below # degC", 
+      "long_name": "_", 
+      "short_name": "_", 
+      "definition": "_"
+    }, 
+    "threshold": [
+      {
+        "units": "degree_Celsius", 
+        "value": "#", 
+        "logic": "<"
+      }
+    ], 
+    "output": {
+      "reference": "_", 
+      "canonical_units": "1", 
+      "cell_method": "time: minimum within days time: sum over days", 
+      "long_name": "Number of days with Tmin < #C", 
+      "standard_name": "number_of_days_with_air_temperature_below_threshold", 
+      "legend_units": "days", 
+      "units": "1"
+    }
+  }, 
+  {
+    "cf_level": "CF-1.6", 
+    "varname": "tnge#", 
+    "n_thresholds": "1", 
+    "n_inputs": "1", 
+    "freq": "ann/sea/mon", 
+    "input": [
+      {
+        "standard_name": "air_temperature", 
+        "known_variables": [
+          "tasmin", 
+          "tasmin-adjust", 
+          "tmin", 
+          "tn", 
+          "mint"
+        ], 
+        "cell_method": "time: minimum within days"
+      }
+    ], 
+    "et": {
+      "comment": "count of days when daily minimum temperature is above or equal # degC", 
+      "long_name": "_", 
+      "short_name": "_", 
+      "definition": "_"
+    }, 
+    "threshold": [
+      {
+        "units": "degree_Celsius", 
+        "value": "#", 
+        "logic": ">="
+      }
+    ], 
+    "output": {
+      "reference": "_", 
+      "canonical_units": "1", 
+      "cell_method": "time: minimum within days time: sum over days", 
+      "long_name": "Number of days with Tmin >= #C", 
+      "standard_name": "number_of_days_with_air_temperature_above_or equal_threshold", 
+      "legend_units": "days", 
+      "units": "1"
+    }
+  }, 
+  {
+    "cf_level": "CF-1.6", 
+    "varname": "tnle#", 
+    "n_thresholds": "1", 
+    "n_inputs": "1", 
+    "freq": "ann/sea/mon", 
+    "input": [
+      {
+        "standard_name": "air_temperature", 
+        "known_variables": [
+          "tasmin", 
+          "tasmin-adjust", 
+          "tmin", 
+          "tn", 
+          "mint"
+        ], 
+        "cell_method": "time: minimum within days"
+      }
+    ], 
+    "et": {
+      "comment": "count of days when daily minimum temperature is below or equal# degC", 
+      "long_name": "_", 
+      "short_name": "_", 
+      "definition": "_"
+    }, 
+    "threshold": [
+      {
+        "units": "degree_Celsius", 
+        "value": "#", 
+        "logic": "<="
+      }
+    ], 
+    "output": {
+      "reference": "_", 
+      "canonical_units": "1", 
+      "cell_method": "time: minimum within days time: sum over days", 
+      "long_name": "Number of days with Tmin <= #C", 
+      "standard_name": "number_of_days_with_air_temperature_below_or equal_threshold", 
+      "legend_units": "days", 
+      "units": "1"
+    }
+  }, 
+  {
+    "cf_level": "CF-1.6", 
+    "varname": "txgt#", 
+    "n_thresholds": "1", 
+    "n_inputs": "1", 
+    "freq": "ann/sea/mon", 
+    "input": [
+      {
+        "standard_name": "air_temperature", 
+        "known_variables": [
+          "tasmax", 
+          "tasmax-adjust", 
+          "tmax", 
+          "tx", 
+          "maxt"
+        ], 
+        "cell_method": "time: maximum within days"
+      }
+    ], 
+    "et": {
+      "comment": "count of days when daily maximum temperature is above # degC", 
+      "long_name": "_", 
+      "short_name": "_", 
+      "definition": "_"
+    }, 
+    "threshold": [
+      {
+        "units": "degree_Celsius", 
+        "value": "#", 
+        "logic": ">"
+      }
+    ], 
+    "output": {
+      "reference": "_", 
+      "canonical_units": "1", 
+      "cell_method": "time: maximum within days time: sum over days", 
+      "long_name": "Number of days with Tmax > #C", 
+      "standard_name": "number_of_days_with_air_temperature_above_threshold", 
+      "legend_units": "days", 
+      "units": "1"
+    }
+  }, 
+  {
+    "cf_level": "CF-1.6", 
+    "varname": "txlt#", 
+    "n_thresholds": "1", 
+    "n_inputs": "1", 
+    "freq": "ann/sea/mon", 
+    "input": [
+      {
+        "standard_name": "air_temperature", 
+        "known_variables": [
+          "tasmax", 
+          "tasmax-adjust", 
+          "tmax", 
+          "tx", 
+          "maxt"
+        ], 
+        "cell_method": "time: maximum within days"
+      }
+    ], 
+    "et": {
+      "comment": "count of days when daily maximum temperature is below # degC", 
+      "long_name": "_", 
+      "short_name": "_", 
+      "definition": "_"
+    }, 
+    "threshold": [
+      {
+        "units": "degree_Celsius", 
+        "value": "#", 
+        "logic": "<"
+      }
+    ], 
+    "output": {
+      "reference": "_", 
+      "canonical_units": "1", 
+      "cell_method": "time: maximum within days time: sum over days", 
+      "long_name": "Number of days with Tmax < #C", 
+      "standard_name": "number_of_days_with_air_temperature_below_threshold", 
+      "legend_units": "days", 
+      "units": "1"
+    }
+  }, 
+  {
+    "cf_level": "CF-1.6", 
+    "varname": "txge#", 
+    "n_thresholds": "1", 
+    "n_inputs": "1", 
+    "freq": "ann/sea/mon", 
+    "input": [
+      {
+        "standard_name": "air_temperature", 
+        "known_variables": [
+          "tasmax", 
+          "tasmax-adjust", 
+          "tmax", 
+          "tx", 
+          "maxt"
+        ], 
+        "cell_method": "time: maximum within days"
+      }
+    ], 
+    "et": {
+      "comment": "count of days when daily maximum temperature is above or equal # degC", 
+      "long_name": "_", 
+      "short_name": "_", 
+      "definition": "_"
+    }, 
+    "threshold": [
+      {
+        "units": "degree_Celsius", 
+        "value": "#", 
+        "logic": ">="
+      }
+    ], 
+    "output": {
+      "reference": "_", 
+      "canonical_units": "1", 
+      "cell_method": "time: maximum within days time: sum over days", 
+      "long_name": "Number of days with Tmax >= #C", 
+      "standard_name": "number_of_days_with_air_temperature_above_or equal_threshold", 
+      "legend_units": "days", 
+      "units": "1"
+    }
+  }, 
+  {
+    "cf_level": "CF-1.6", 
+    "varname": "txle#", 
+    "n_thresholds": "1", 
+    "n_inputs": "1", 
+    "freq": "ann/sea/mon", 
+    "input": [
+      {
+        "standard_name": "air_temperature", 
+        "known_variables": [
+          "tasmax", 
+          "tasmax-adjust", 
+          "tmax", 
+          "tx", 
+          "maxt"
+        ], 
+        "cell_method": "time: maximum within days"
+      }
+    ], 
+    "et": {
+      "comment": "count of days when daily maximum temperature is below or equal # degC", 
+      "long_name": "_", 
+      "short_name": "_", 
+      "definition": "_"
+    }, 
+    "threshold": [
+      {
+        "units": "degree_Celsius", 
+        "value": "#", 
+        "logic": "<="
+      }
+    ], 
+    "output": {
+      "reference": "_", 
+      "canonical_units": "1", 
+      "cell_method": "time: maximum within days time: sum over days", 
+      "long_name": "Number of days with Tmax <= #C", 
+      "standard_name": "number_of_days_with_air_temperature_below_or equal_threshold", 
+      "legend_units": "days", 
+      "units": "1"
+    }
+  }, 
+  {
+    "cf_level": "CF-1.6", 
+    "varname": "tmgt#", 
+    "n_thresholds": "1", 
+    "n_inputs": "1", 
+    "freq": "ann/sea/mon", 
+    "input": [
+      {
+        "standard_name": "air_temperature", 
+        "known_variables": [
+          "tas", 
+          "tas-adjust", 
+          "tmean", 
+          "tm", 
+          "tg", 
+          "meant"
+        ], 
+        "cell_method": "time: mean within days"
+      }
+    ], 
+    "et": {
+      "comment": "count of days when daily mean temperature is above # degC", 
+      "long_name": "_", 
+      "short_name": "_", 
+      "definition": "_"
+    }, 
+    "threshold": [
+      {
+        "units": "degree_Celsius", 
+        "value": "#", 
+        "logic": ">"
+      }
+    ], 
+    "output": {
+      "reference": "_", 
+      "canonical_units": "1", 
+      "cell_method": "time: mean within days time: sum over days", 
+      "long_name": "Number of days with Tmean > #C", 
+      "standard_name": "number_of_days_with_air_temperature_above_threshold", 
+      "legend_units": "days", 
+      "units": "1"
+    }
+  }, 
+  {
+    "cf_level": "CF-1.6", 
+    "varname": "tmlt#", 
+    "n_thresholds": "1", 
+    "n_inputs": "1", 
+    "freq": "ann/sea/mon", 
+    "input": [
+      {
+        "standard_name": "air_temperature", 
+        "known_variables": [
+          "tas", 
+          "tas-adjust", 
+          "tmean", 
+          "tm", 
+          "tg", 
+          "meant"
+        ], 
+        "cell_method": "time: mean within days"
+      }
+    ], 
+    "et": {
+      "comment": "count of days when daily mean temperature is below # degC", 
+      "long_name": "_", 
+      "short_name": "_", 
+      "definition": "_"
+    }, 
+    "threshold": [
+      {
+        "units": "degree_Celsius", 
+        "value": "#", 
+        "logic": "<"
+      }
+    ], 
+    "output": {
+      "reference": "_", 
+      "canonical_units": "1", 
+      "cell_method": "time: mean within days time: sum over days", 
+      "long_name": "Number of days with Tmean < #C", 
+      "standard_name": "number_of_days_with_air_temperature_below_threshold", 
+      "legend_units": "days", 
+      "units": "1"
+    }
+  }, 
+  {
+    "cf_level": "CF-1.6", 
+    "varname": "tmge#", 
+    "n_thresholds": "1", 
+    "n_inputs": "1", 
+    "freq": "ann/sea/mon", 
+    "input": [
+      {
+        "standard_name": "air_temperature", 
+        "known_variables": [
+          "tas", 
+          "tas-adjust", 
+          "tmean", 
+          "tm", 
+          "tg", 
+          "meant"
+        ], 
+        "cell_method": "time: mean within days"
+      }
+    ], 
+    "et": {
+      "comment": "count of days when daily mean temperature is above or equal # degC", 
+      "long_name": "_", 
+      "short_name": "_", 
+      "definition": "_"
+    }, 
+    "threshold": [
+      {
+        "units": "degree_Celsius", 
+        "value": "#", 
+        "logic": ">="
+      }
+    ], 
+    "output": {
+      "reference": "_", 
+      "canonical_units": "1", 
+      "cell_method": "time: mean within days time: sum over days", 
+      "long_name": "Number of days with Tmean >= #C", 
+      "standard_name": "number_of_days_with_air_temperature_above_or equal_threshold", 
+      "legend_units": "days", 
+      "units": "1"
+    }
+  }, 
+  {
+    "cf_level": "CF-1.6", 
+    "varname": "tmle#", 
+    "n_thresholds": "1", 
+    "n_inputs": "1", 
+    "freq": "ann/sea/mon", 
+    "input": [
+      {
+        "standard_name": "air_temperature", 
+        "known_variables": [
+          "tas", 
+          "tas-adjust", 
+          "tmean", 
+          "tm", 
+          "tg", 
+          "meant"
+        ], 
+        "cell_method": "time: mean within days"
+      }
+    ], 
+    "et": {
+      "comment": "count of days when daily mean temperature is below or equal# degC", 
+      "long_name": "_", 
+      "short_name": "_", 
+      "definition": "_"
+    }, 
+    "threshold": [
+      {
+        "units": "degree_Celsius", 
+        "value": "#", 
+        "logic": "<="
+      }
+    ], 
+    "output": {
+      "reference": "_", 
+      "canonical_units": "1", 
+      "cell_method": "time: mean within days time: sum over days", 
+      "long_name": "Number of days with Tmean <= #C", 
+      "standard_name": "number_of_days_with_air_temperature_below_or equal_threshold", 
+      "legend_units": "days", 
+      "units": "1"
+    }
+  }, 
+  {
+    "cf_level": "CF-1.6", 
+    "varname": "ctngt#", 
+    "n_thresholds": "1", 
+    "n_inputs": "1", 
+    "freq": "ann/sea/mon", 
+    "input": [
+      {
+        "standard_name": "air_temperature", 
+        "known_variables": [
+          "tasmin", 
+          "tasmin-adjust", 
+          "tmin", 
+          "tn", 
+          "mint"
+        ], 
+        "cell_method": "time: minimum within days"
+      }
+    ], 
+    "et": {
+      "comment": "count of days when daily minimum temperature is above # degC", 
+      "long_name": "_", 
+      "short_name": "_", 
+      "definition": "_"
+    }, 
+    "threshold": [
+      {
+        "units": "degree_Celsius", 
+        "value": "#", 
+        "logic": ">"
+      }
+    ], 
+    "output": {
+      "reference": "_", 
+      "canonical_units": "day", 
+      "cell_method": "time: minimum within days time: maximum over days", 
+      "long_name": "Maximum number of consequtive days with Tmin > #C", 
+      "standard_name": "spell_length_of_days_with_air_temperature_above_threshold", 
+      "legend_units": "days", 
+      "units": "day"
+    }
+  }, 
+  {
+    "cf_level": "CF-1.6", 
+    "varname": "ctnlt#", 
+    "n_thresholds": "1", 
+    "n_inputs": "1", 
+    "freq": "ann/sea/mon", 
+    "input": [
+      {
+        "standard_name": "air_temperature", 
+        "known_variables": [
+          "tasmin", 
+          "tasmin-adjust", 
+          "tmin", 
+          "tn", 
+          "mint"
+        ], 
+        "cell_method": "time: minimum within days"
+      }
+    ], 
+    "et": {
+      "comment": "count of days when daily minimum temperature is below # degC", 
+      "long_name": "_", 
+      "short_name": "_", 
+      "definition": "_"
+    }, 
+    "threshold": [
+      {
+        "units": "degree_Celsius", 
+        "value": "#", 
+        "logic": "<"
+      }
+    ], 
+    "output": {
+      "reference": "_", 
+      "canonical_units": "day", 
+      "cell_method": "time: minimum within days time: maximum over days", 
+      "long_name": "Maximum number of consequtive days with Tmin < #C", 
+      "standard_name": "spell_length_of_days_with_air_temperature_below_threshold", 
+      "legend_units": "days", 
+      "units": "day"
+    }
+  }, 
+  {
+    "cf_level": "CF-1.6", 
+    "varname": "ctnge#", 
+    "n_thresholds": "1", 
+    "n_inputs": "1", 
+    "freq": "ann/sea/mon", 
+    "input": [
+      {
+        "standard_name": "air_temperature", 
+        "known_variables": [
+          "tasmin", 
+          "tasmin-adjust", 
+          "tmin", 
+          "tn", 
+          "mint"
+        ], 
+        "cell_method": "time: minimum within days"
+      }
+    ], 
+    "et": {
+      "comment": "count of days when daily minimum temperature is above or equal # degC", 
+      "long_name": "_", 
+      "short_name": "_", 
+      "definition": "_"
+    }, 
+    "threshold": [
+      {
+        "units": "degree_Celsius", 
+        "value": "#", 
+        "logic": ">="
+      }
+    ], 
+    "output": {
+      "reference": "_", 
+      "canonical_units": "day", 
+      "cell_method": "time: minimum within days time: maximum over days", 
+      "long_name": "Maximum number of consequtive days with Tmin >= #C", 
+      "standard_name": "spell_length_of_days_with_air_temperature_above_or equal_threshold", 
+      "legend_units": "days", 
+      "units": "day"
+    }
+  }, 
+  {
+    "cf_level": "CF-1.6", 
+    "varname": "ctnle#", 
+    "n_thresholds": "1", 
+    "n_inputs": "1", 
+    "freq": "ann/sea/mon", 
+    "input": [
+      {
+        "standard_name": "air_temperature", 
+        "known_variables": [
+          "tasmin", 
+          "tasmin-adjust", 
+          "tmin", 
+          "tn", 
+          "mint"
+        ], 
+        "cell_method": "time: minimum within days"
+      }
+    ], 
+    "et": {
+      "comment": "count of days when daily minimum temperature is below or equal# degC", 
+      "long_name": "_", 
+      "short_name": "_", 
+      "definition": "_"
+    }, 
+    "threshold": [
+      {
+        "units": "degree_Celsius", 
+        "value": "#", 
+        "logic": "<="
+      }
+    ], 
+    "output": {
+      "reference": "_", 
+      "canonical_units": "day", 
+      "cell_method": "time: minimum within days time: maximum over days", 
+      "long_name": "Maximum number of consequtive days with Tmin <= #C", 
+      "standard_name": "spell_length_of_days_with_air_temperature_below_or equal_threshold", 
+      "legend_units": "days", 
+      "units": "day"
+    }
+  }, 
+  {
+    "cf_level": "CF-1.6", 
+    "varname": "ctxgt#", 
+    "n_thresholds": "1", 
+    "n_inputs": "1", 
+    "freq": "ann/sea/mon", 
+    "input": [
+      {
+        "standard_name": "air_temperature", 
+        "known_variables": [
+          "tasmax", 
+          "tasmax-adjust", 
+          "tmax", 
+          "tx", 
+          "maxt"
+        ], 
+        "cell_method": "time: maximum within days"
+      }
+    ], 
+    "et": {
+      "comment": "count of days when daily maximum temperature is above # degC", 
+      "long_name": "_", 
+      "short_name": "_", 
+      "definition": "_"
+    }, 
+    "threshold": [
+      {
+        "units": "degree_Celsius", 
+        "value": "#", 
+        "logic": ">"
+      }
+    ], 
+    "output": {
+      "reference": "_", 
+      "canonical_units": "day", 
+      "cell_method": "time: maximum within days time: maximum over days", 
+      "long_name": "Maximum number of consequtive days with Tmax > #C", 
+      "standard_name": "spell_length_of_days_with_air_temperature_above_threshold", 
+      "legend_units": "days", 
+      "units": "day"
+    }
+  }, 
+  {
+    "cf_level": "CF-1.6", 
+    "varname": "ctxlt#", 
+    "n_thresholds": "1", 
+    "n_inputs": "1", 
+    "freq": "ann/sea/mon", 
+    "input": [
+      {
+        "standard_name": "air_temperature", 
+        "known_variables": [
+          "tasmax", 
+          "tasmax-adjust", 
+          "tmax", 
+          "tx", 
+          "maxt"
+        ], 
+        "cell_method": "time: maximum within days"
+      }
+    ], 
+    "et": {
+      "comment": "count of days when daily maximum temperature is below # degC", 
+      "long_name": "_", 
+      "short_name": "_", 
+      "definition": "_"
+    }, 
+    "threshold": [
+      {
+        "units": "degree_Celsius", 
+        "value": "#", 
+        "logic": "<"
+      }
+    ], 
+    "output": {
+      "reference": "_", 
+      "canonical_units": "day", 
+      "cell_method": "time: maximum within days time: maximum over days", 
+      "long_name": "Maximum number of consequtive days with Tmax < #C", 
+      "standard_name": "spell_length_of_days_with_air_temperature_below_threshold", 
+      "legend_units": "days", 
+      "units": "day"
+    }
+  }, 
+  {
+    "cf_level": "CF-1.6", 
+    "varname": "ctxge#", 
+    "n_thresholds": "1", 
+    "n_inputs": "1", 
+    "freq": "ann/sea/mon", 
+    "input": [
+      {
+        "standard_name": "air_temperature", 
+        "known_variables": [
+          "tasmax", 
+          "tasmax-adjust", 
+          "tmax", 
+          "tx", 
+          "maxt"
+        ], 
+        "cell_method": "time: maximum within days"
+      }
+    ], 
+    "et": {
+      "comment": "count of days when daily maximum temperature is above or equal # degC", 
+      "long_name": "_", 
+      "short_name": "_", 
+      "definition": "_"
+    }, 
+    "threshold": [
+      {
+        "units": "degree_Celsius", 
+        "value": "#", 
+        "logic": ">="
+      }
+    ], 
+    "output": {
+      "reference": "_", 
+      "canonical_units": "day", 
+      "cell_method": "time: maximum within days time: maximum over days", 
+      "long_name": "Maximum number of consequtive days with Tmax >= #C", 
+      "standard_name": "spell_length_of_days_with_air_temperature_above_or equal_threshold", 
+      "legend_units": "days", 
+      "units": "day"
+    }
+  }, 
+  {
+    "cf_level": "CF-1.6", 
+    "varname": "ctxle#", 
+    "n_thresholds": "1", 
+    "n_inputs": "1", 
+    "freq": "ann/sea/mon", 
+    "input": [
+      {
+        "standard_name": "air_temperature", 
+        "known_variables": [
+          "tasmax", 
+          "tasmax-adjust", 
+          "tmax", 
+          "tx", 
+          "maxt"
+        ], 
+        "cell_method": "time: maximum within days"
+      }
+    ], 
+    "et": {
+      "comment": "count of days when daily maximum temperature is below or equal # degC", 
+      "long_name": "_", 
+      "short_name": "_", 
+      "definition": "_"
+    }, 
+    "threshold": [
+      {
+        "units": "degree_Celsius", 
+        "value": "#", 
+        "logic": "<="
+      }
+    ], 
+    "output": {
+      "reference": "_", 
+      "canonical_units": "day", 
+      "cell_method": "time: maximum within days time: maximum over days", 
+      "long_name": "Maximum number of consequtive days with Tmax <= #C", 
+      "standard_name": "spell_length_of_days_with_air_temperature_below_or equal_threshold", 
+      "legend_units": "days", 
+      "units": "day"
+    }
+  }, 
+  {
+    "cf_level": "CF-1.6", 
+    "varname": "ctmgt#", 
+    "n_thresholds": "1", 
+    "n_inputs": "1", 
+    "freq": "ann/sea/mon", 
+    "input": [
+      {
+        "standard_name": "air_temperature", 
+        "known_variables": [
+          "tas", 
+          "tas-adjust", 
+          "tmean", 
+          "tm", 
+          "tg", 
+          "meant"
+        ], 
+        "cell_method": "time: mean within days"
+      }
+    ], 
+    "et": {
+      "comment": "count of days when daily mean temperature is above # degC", 
+      "long_name": "_", 
+      "short_name": "_", 
+      "definition": "_"
+    }, 
+    "threshold": [
+      {
+        "units": "degree_Celsius", 
+        "value": "#", 
+        "logic": ">"
+      }
+    ], 
+    "output": {
+      "reference": "_", 
+      "canonical_units": "day", 
+      "cell_method": "time: mean within days time: maximum over days", 
+      "long_name": "Maximum number of consequtive days with Tmean > #C", 
+      "standard_name": "spell_length_of_days_with_air_temperature_above_threshold", 
+      "legend_units": "days", 
+      "units": "day"
+    }
+  }, 
+  {
+    "cf_level": "CF-1.6", 
+    "varname": "ctmlt#", 
+    "n_thresholds": "1", 
+    "n_inputs": "1", 
+    "freq": "ann/sea/mon", 
+    "input": [
+      {
+        "standard_name": "air_temperature", 
+        "known_variables": [
+          "tas", 
+          "tas-adjust", 
+          "tmean", 
+          "tm", 
+          "tg", 
+          "meant"
+        ], 
+        "cell_method": "time: mean within days"
+      }
+    ], 
+    "et": {
+      "comment": "count of days when daily mean temperature is below # degC", 
+      "long_name": "_", 
+      "short_name": "_", 
+      "definition": "_"
+    }, 
+    "threshold": [
+      {
+        "units": "degree_Celsius", 
+        "value": "#", 
+        "logic": "<"
+      }
+    ], 
+    "output": {
+      "reference": "_", 
+      "canonical_units": "day", 
+      "cell_method": "time: mean within days time: maximum over days", 
+      "long_name": "Maximum number of consequtive days with Tmean < #C", 
+      "standard_name": "spell_length_of_days_with_air_temperature_below_threshold", 
+      "legend_units": "days", 
+      "units": "day"
+    }
+  }, 
+  {
+    "cf_level": "CF-1.6", 
+    "varname": "ctmge#", 
+    "n_thresholds": "1", 
+    "n_inputs": "1", 
+    "freq": "ann/sea/mon", 
+    "input": [
+      {
+        "standard_name": "air_temperature", 
+        "known_variables": [
+          "tas", 
+          "tas-adjust", 
+          "tmean", 
+          "tm", 
+          "tg", 
+          "meant"
+        ], 
+        "cell_method": "time: mean within days"
+      }
+    ], 
+    "et": {
+      "comment": "count of days when daily mean temperature is above or equal # degC", 
+      "long_name": "_", 
+      "short_name": "_", 
+      "definition": "_"
+    }, 
+    "threshold": [
+      {
+        "units": "degree_Celsius", 
+        "value": "#", 
+        "logic": ">="
+      }
+    ], 
+    "output": {
+      "reference": "_", 
+      "canonical_units": "day", 
+      "cell_method": "time: mean within days time: maximum over days", 
+      "long_name": "Maximum number of consequtive days with Tmean >= #C", 
+      "standard_name": "spell_length_of_days_with_air_temperature_above_or equal_threshold", 
+      "legend_units": "days", 
+      "units": "day"
+    }
+  }, 
+  {
+    "cf_level": "CF-1.6", 
+    "varname": "ctmle#", 
+    "n_thresholds": "1", 
+    "n_inputs": "1", 
+    "freq": "ann/sea/mon", 
+    "input": [
+      {
+        "standard_name": "air_temperature", 
+        "known_variables": [
+          "tas", 
+          "tas-adjust", 
+          "tmean", 
+          "tm", 
+          "tg", 
+          "meant"
+        ], 
+        "cell_method": "time: mean within days"
+      }
+    ], 
+    "et": {
+      "comment": "count of days when daily mean temperature is below or equal# degC", 
+      "long_name": "_", 
+      "short_name": "_", 
+      "definition": "_"
+    }, 
+    "threshold": [
+      {
+        "units": "degree_Celsius", 
+        "value": "#", 
+        "logic": "<="
+      }
+    ], 
+    "output": {
+      "reference": "_", 
+      "canonical_units": "day", 
+      "cell_method": "time: mean within days time: maximum over days", 
+      "long_name": "Maximum number of consequtive days with Tmean <= #C", 
+      "standard_name": "spell_length_of_days_with_air_temperature_below_or equal_threshold", 
+      "legend_units": "days", 
+      "units": "day"
+    }
+  }, 
+  {
+    "cf_level": "CF-1.6", 
+    "varname": "txx", 
+    "n_thresholds": "0", 
+    "n_inputs": "1", 
+    "freq": "ann/sea/mon", 
+    "input": [
+      {
+        "standard_name": "air_temperature", 
+        "known_variables": [
+          "tasmax", 
+          "tasmax-adjust", 
+          "tmax", 
+          "tx", 
+          "maxt"
+        ], 
+        "cell_method": "time: maximum within days"
+      }
+    ], 
+    "et": {
+      "comment": "maximum of daily maximum temperature", 
+      "long_name": "Maximum daily maximum temperature", 
+      "short_name": "txx", 
+      "definition": "Maximum value of daily TX"
+    }, 
+    "threshold": {}, 
+    "output": {
+      "reference": "ETCCDI", 
+      "canonical_units": "Kelvin", 
+      "cell_method": "time: maximum within days time: maximum over days", 
+      "long_name": "Maximum daily maximum temperature", 
+      "standard_name": "air_temperature", 
+      "legend_units": "degree_Celsius", 
+      "units": "degree_Celsius"
+    }
+  }, 
+  {
+    "cf_level": "CF-1.6", 
+    "varname": "tnx", 
+    "n_thresholds": "0", 
+    "n_inputs": "1", 
+    "freq": "ann/sea/mon", 
+    "input": [
+      {
+        "standard_name": "air_temperature", 
+        "known_variables": [
+          "tasmin", 
+          "tasmin-adjust", 
+          "tmin", 
+          "tn", 
+          "mint"
+        ], 
+        "cell_method": "time: minimum within days"
+      }
+    ], 
+    "et": {
+      "comment": "maximum of daily minimum temperature", 
+      "long_name": "Maximum daily minimum temperature", 
+      "short_name": "tnx", 
+      "definition": "Maximum value of daily TN"
+    }, 
+    "threshold": {}, 
+    "output": {
+      "reference": "ETCCDI", 
+      "canonical_units": "Kelvin", 
+      "cell_method": "time: minimum within days time: maximum over days", 
+      "long_name": "Maximum daily minimum temperature", 
+      "standard_name": "air_temperature", 
+      "legend_units": "degree_Celsius", 
+      "units": "degree_Celsius"
+    }
+  }, 
+  {
+    "cf_level": "CF-1.6", 
+    "varname": "txn", 
+    "n_thresholds": "0", 
+    "n_inputs": "1", 
+    "freq": "ann/sea/mon", 
+    "input": [
+      {
+        "standard_name": "air_temperature", 
+        "known_variables": [
+          "tasmax", 
+          "tasmax-adjust", 
+          "tmax", 
+          "tx", 
+          "maxt"
+        ], 
+        "cell_method": "time: maximum within days"
+      }
+    ], 
+    "et": {
+      "comment": "minimum of daily maximum temperature", 
+      "long_name": "Minimum daily maximum temperature", 
+      "short_name": "txn", 
+      "definition": "Minimum value of daily TX"
+    }, 
+    "threshold": {}, 
+    "output": {
+      "reference": "ETCCDI", 
+      "canonical_units": "Kelvin", 
+      "cell_method": "time: maximum within days time: minimum over days", 
+      "long_name": "Minimum daily maximum temperature", 
+      "standard_name": "air_temperature", 
+      "legend_units": "degree_Celsius", 
+      "units": "degree_Celsius"
+    }
+  }, 
+  {
+    "cf_level": "CF-1.6", 
+    "varname": "tnn", 
+    "n_thresholds": "0", 
+    "n_inputs": "1", 
+    "freq": "ann/sea/mon", 
+    "input": [
+      {
+        "standard_name": "air_temperature", 
+        "known_variables": [
+          "tasmin", 
+          "tasmin-adjust", 
+          "tmin", 
+          "tn", 
+          "mint"
+        ], 
+        "cell_method": "time: minimum within days"
+      }
+    ], 
+    "et": {
+      "comment": "minimum of daily minimum temperature", 
+      "long_name": "Minimum daily minimum temperature", 
+      "short_name": "tnn", 
+      "definition": "Minimum value of daily TN"
+    }, 
+    "threshold": {}, 
+    "output": {
+      "reference": "ETCCDI", 
+      "canonical_units": "Kelvin", 
+      "cell_method": "time: minimum within days time: minimum over days", 
+      "long_name": "Minimum daily minimum temperature", 
+      "standard_name": "air_temperature", 
+      "legend_units": "degree_Celsius", 
+      "units": "degree_Celsius"
+    }
+  }, 
+  {
+    "cf_level": "CF-1.6", 
+    "varname": "txmax", 
+    "n_thresholds": "0", 
+    "n_inputs": "1", 
+    "freq": "ann/sea/mon", 
+    "input": [
+      {
+        "standard_name": "air_temperature", 
+        "known_variables": [
+          "tasmax", 
+          "tasmax-adjust", 
+          "tmax", 
+          "tx", 
+          "maxt"
+        ], 
+        "cell_method": "time: maximum within days"
+      }
+    ], 
+    "et": {
+      "comment": "mean of daily maximum temperature", 
+      "long_name": "_", 
+      "short_name": "_", 
+      "definition": "_"
+    }, 
+    "threshold": {}, 
+    "output": {
+      "reference": "_", 
+      "canonical_units": "Kelvin", 
+      "cell_method": "time: maximum within days time: maximum over days", 
+      "long_name": "Maximum daily maximum temperature", 
+      "standard_name": "air_temperature", 
+      "legend_units": "degree_Celsius", 
+      "units": "degree_Celsius"
+    }
+  }, 
+  {
+    "cf_level": "CF-1.6", 
+    "varname": "tnmax", 
+    "n_thresholds": "0", 
+    "n_inputs": "1", 
+    "freq": "ann/sea/mon", 
+    "input": [
+      {
+        "standard_name": "air_temperature", 
+        "known_variables": [
+          "tasmin", 
+          "tasmin-adjust", 
+          "tmin", 
+          "tn", 
+          "mint"
+        ], 
+        "cell_method": "time: minimum within days"
+      }
+    ], 
+    "et": {
+      "comment": "mean of daily minimum temperature", 
+      "long_name": "_", 
+      "short_name": "_", 
+      "definition": "_"
+    }, 
+    "threshold": {}, 
+    "output": {
+      "reference": "_", 
+      "canonical_units": "Kelvin", 
+      "cell_method": "time: minimum within days time: maximum over days", 
+      "long_name": "Maximum daily minimum temperature", 
+      "standard_name": "air_temperature", 
+      "legend_units": "degree_Celsius", 
+      "units": "degree_Celsius"
+    }
+  }, 
+  {
+    "cf_level": "CF-1.6", 
+    "varname": "txmin", 
+    "n_thresholds": "0", 
+    "n_inputs": "1", 
+    "freq": "ann/sea/mon", 
+    "input": [
+      {
+        "standard_name": "air_temperature", 
+        "known_variables": [
+          "tas", 
+          "tas-adjust", 
+          "tmean", 
+          "tm", 
+          "tg", 
+          "meant"
+        ], 
+        "cell_method": "time: mean within days"
+      }
+    ], 
+    "et": {
+      "comment": "maximum of daily mean temperature", 
+      "long_name": "_", 
+      "short_name": "_", 
+      "definition": "_"
+    }, 
+    "threshold": {}, 
+    "output": {
+      "reference": "_", 
+      "canonical_units": "Kelvin", 
+      "cell_method": "time: maximum within days time: minimum over days", 
+      "long_name": "Minimum daily maximum temperature", 
+      "standard_name": "air_temperature", 
+      "legend_units": "degree_Celsius", 
+      "units": "degree_Celsius"
+    }
+  }, 
+  {
+    "cf_level": "CF-1.6", 
+    "varname": "tnmin", 
+    "n_thresholds": "0", 
+    "n_inputs": "1", 
+    "freq": "ann/sea/mon", 
+    "input": [
+      {
+        "standard_name": "air_temperature", 
+        "known_variables": [
+          "tas", 
+          "tas-adjust", 
+          "tmean", 
+          "tm", 
+          "tg", 
+          "meant"
+        ], 
+        "cell_method": "time: mean within days"
+      }
+    ], 
+    "et": {
+      "comment": "minimum of daily mean temperature", 
+      "long_name": "_", 
+      "short_name": "_", 
+      "definition": "_"
+    }, 
+    "threshold": {}, 
+    "output": {
+      "reference": "_", 
+      "canonical_units": "Kelvin", 
+      "cell_method": "time: minimum within days time: minimum over days", 
+      "long_name": "Minimum daily minimum temperature", 
+      "standard_name": "air_temperature", 
+      "legend_units": "degree_Celsius", 
+      "units": "degree_Celsius"
+    }
+  }, 
+  {
+    "cf_level": "CF-1.6", 
+    "varname": "txmean", 
+    "n_thresholds": "0", 
+    "n_inputs": "1", 
+    "freq": "ann/sea/mon", 
+    "input": [
+      {
+        "standard_name": "air_temperature", 
+        "known_variables": [
+          "tasmax", 
+          "tasmax-adjust", 
+          "tmax", 
+          "tx", 
+          "maxt"
+        ], 
+        "cell_method": "time: maximum within days"
+      }
+    ], 
+    "et": {
+      "comment": "mean of daily maximum temperature", 
+      "long_name": "_", 
+      "short_name": "_", 
+      "definition": "_"
+    }, 
+    "threshold": {}, 
+    "output": {
+      "reference": "_", 
+      "canonical_units": "Kelvin", 
+      "cell_method": "time: maximum within days time: mean over days", 
+      "long_name": "Mean daily maximum temperature", 
+      "standard_name": "air_temperature", 
+      "legend_units": "degree_Celsius", 
+      "units": "degree_Celsius"
+    }
+  }, 
+  {
+    "cf_level": "CF-1.6", 
+    "varname": "tnmean", 
+    "n_thresholds": "0", 
+    "n_inputs": "1", 
+    "freq": "ann/sea/mon", 
+    "input": [
+      {
+        "standard_name": "air_temperature", 
+        "known_variables": [
+          "tasmin", 
+          "tasmin-adjust", 
+          "tmin", 
+          "tn", 
+          "mint"
+        ], 
+        "cell_method": "time: minimum within days"
+      }
+    ], 
+    "et": {
+      "comment": "mean of daily minimum temperature", 
+      "long_name": "_", 
+      "short_name": "_", 
+      "definition": "_"
+    }, 
+    "threshold": {}, 
+    "output": {
+      "reference": "_", 
+      "canonical_units": "Kelvin", 
+      "cell_method": "time: minimum within days time: mean over days", 
+      "long_name": "Mean daily minimum temperature", 
+      "standard_name": "air_temperature", 
+      "legend_units": "degree_Celsius", 
+      "units": "degree_Celsius"
+    }
+  }, 
+  {
+    "cf_level": "CF-1.6", 
+    "varname": "tmmax", 
+    "n_thresholds": "0", 
+    "n_inputs": "1", 
+    "freq": "ann/sea/mon", 
+    "input": [
+      {
+        "standard_name": "air_temperature", 
+        "known_variables": [
+          "tas", 
+          "tas-adjust", 
+          "tmean", 
+          "tm", 
+          "tg", 
+          "meant"
+        ], 
+        "cell_method": "time: mean within days"
+      }
+    ], 
+    "et": {
+      "comment": "maximum of daily mean temperature", 
+      "long_name": "_", 
+      "short_name": "_", 
+      "definition": "_"
+    }, 
+    "threshold": {}, 
+    "output": {
+      "reference": "_", 
+      "canonical_units": "Kelvin", 
+      "cell_method": "time: mean within days time: maximum over days", 
+      "long_name": "Maximum daily mean temperature", 
+      "standard_name": "air_temperature", 
+      "legend_units": "degree_Celsius", 
+      "units": "degree_Celsius"
+    }
+  }, 
+  {
+    "cf_level": "CF-1.6", 
+    "varname": "tmmin", 
+    "n_thresholds": "0", 
+    "n_inputs": "1", 
+    "freq": "ann/sea/mon", 
+    "input": [
+      {
+        "standard_name": "air_temperature", 
+        "known_variables": [
+          "tas", 
+          "tas-adjust", 
+          "tmean", 
+          "tm", 
+          "tg", 
+          "meant"
+        ], 
+        "cell_method": "time: mean within days"
+      }
+    ], 
+    "et": {
+      "comment": "minimum of daily mean temperature", 
+      "long_name": "_", 
+      "short_name": "_", 
+      "definition": "_"
+    }, 
+    "threshold": {}, 
+    "output": {
+      "reference": "_", 
+      "canonical_units": "Kelvin", 
+      "cell_method": "time: mean within days time: maximum over days", 
+      "long_name": "Minimum daily mean temperature", 
+      "standard_name": "air_temperature", 
+      "legend_units": "degree_Celsius", 
+      "units": "degree_Celsius"
+    }
+  }, 
+  {
+    "cf_level": "CF-1.6", 
+    "varname": "tmmean", 
+    "n_thresholds": "0", 
+    "n_inputs": "1", 
+    "freq": "ann/sea/mon", 
+    "input": [
+      {
+        "standard_name": "air_temperature", 
+        "known_variables": [
+          "tas", 
+          "tas-adjust", 
+          "tmean", 
+          "tm", 
+          "tg", 
+          "meant"
+        ], 
+        "cell_method": "time: mean within days"
+      }
+    ], 
+    "et": {
+      "comment": "mean of daily mean temperature", 
+      "long_name": "_", 
+      "short_name": "_", 
+      "definition": "_"
+    }, 
+    "threshold": {}, 
+    "output": {
+      "reference": "_", 
+      "canonical_units": "Kelvin", 
+      "cell_method": "time: mean within days time: mean over days", 
+      "long_name": "Mean daily mean temperature", 
+      "standard_name": "air_temperature", 
+      "legend_units": "degree_Celsius", 
+      "units": "degree_Celsius"
+    }
+  }, 
+  {
+    "cf_level": "CF-1.7", 
+    "varname": "dtr", 
+    "n_thresholds": "0", 
+    "n_inputs": "2", 
+    "freq": "mon", 
+    "input": [
+      {
+        "standard_name": "air_temperature", 
+        "known_variables": [
+          "tasmin", 
+          "tasmin-adjust", 
+          "tmin", 
+          "tn", 
+          "mint"
+        ], 
+        "cell_method": "time: minimum within days"
+      }, 
+      {
+        "standard_name": "air_temperature", 
+        "known_variables": [
+          "tasmax", 
+          "tasmax-adjust", 
+          "tmax", 
+          "tx", 
+          "maxt"
+        ], 
+        "cell_method": "time: maximum within days"
+      }
+    ], 
+    "et": {
+      "comment": "mean of daily temperature range", 
+      "long_name": "Daily temperature range", 
+      "short_name": "dtr", 
+      "definition": "Monthly mean difference between TX and TN"
+    }, 
+    "threshold": {}, 
+    "output": {
+      "reference": "ETCCDI", 
+      "canonical_units": "Kelvin", 
+      "cell_method": "time range within days time: mean over days", 
+      "long_name": "Mean Diurnal Temperature Range", 
+      "standard_name": "air_temperature", 
+      "legend_units": "degree_Celsius", 
+      "units": "degree_Celsius"
+    }
+  }, 
+  {
+    "cf_level": "CF-1.6", 
+    "varname": "hddheat#", 
+    "n_thresholds": "1", 
+    "n_inputs": "1", 
+    "freq": "ann/sea/mon", 
+    "input": [
+      {
+        "standard_name": "air_temperature", 
+        "known_variables": [
+          "tas", 
+          "tas-adjust", 
+          "tmean", 
+          "tm", 
+          "tg", 
+          "meant"
+        ], 
+        "cell_method": "time: mean within days"
+      }
+    ], 
+    "et": {
+      "comment": "_", 
+      "long_name": "Heating degree days", 
+      "short_name": "hddheat", 
+      "definition": "Sum of Tb- TM (where Tb is a user- defined location-specific base temperature and TM < Tb)"
+    }, 
+    "threshold": [
+      {
+        "units": "degree_Celsius", 
+        "value": "# (=Tb)", 
+        "logic": "<"
+      }
+    ], 
+    "output": {
+      "reference": "ET-SCI", 
+      "canonical_units": "Kelvin second", 
+      "cell_method": "time: mean within days time: sum over days", 
+      "long_name": "Heating Degree Days (Tmean < #C)", 
+      "standard_name": "integral_of_air_temperature_excess_wrt_time", 
+      "legend_units": "degree-days", 
+      "units": "degree_Celsius day"
+    }
+  }, 
+  {
+    "cf_level": "CF-1.6", 
+    "varname": "ddgt#", 
+    "n_thresholds": "1", 
+    "n_inputs": "1", 
+    "freq": "ann/sea/mon", 
+    "input": [
+      {
+        "standard_name": "air_temperature", 
+        "known_variables": [
+          "tas", 
+          "tas-adjust", 
+          "tmean", 
+          "tm", 
+          "tg", 
+          "meant"
+        ], 
+        "cell_method": "time: mean within days"
+      }
+    ], 
+    "et": {
+      "comment": "_", 
+      "long_name": "_", 
+      "short_name": "_", 
+      "definition": "_"
+    }, 
+    "threshold": [
+      {
+        "units": "degree_Celsius", 
+        "value": "#", 
+        "logic": ">"
+      }
+    ], 
+    "output": {
+      "reference": "_", 
+      "canonical_units": "Kelvin second", 
+      "cell_method": "time: mean within days time: sum over days", 
+      "long_name": "Degree Days (Tmean > #C)", 
+      "standard_name": "integral_of_air_temperature_excess_wrt_time", 
+      "legend_units": "degree-days", 
+      "units": "degree_Celsius day"
+    }
+  }, 
+  {
+    "cf_level": "CF-1.6", 
+    "varname": "cddcold#", 
+    "n_thresholds": "1", 
+    "n_inputs": "1", 
+    "freq": "ann/sea/mon", 
+    "input": [
+      {
+        "standard_name": "air_temperature", 
+        "known_variables": [
+          "tas", 
+          "tas-adjust", 
+          "tmean", 
+          "tm", 
+          "tg", 
+          "meant"
+        ], 
+        "cell_method": "time: mean within days"
+      }
+    ], 
+    "et": {
+      "comment": "_", 
+      "long_name": "Cooling degree days", 
+      "short_name": "cddcold", 
+      "definition": "Sum of TM - Tb (where Tb is a user- defined location-specific base temperature and TM > Tb)"
+    }, 
+    "threshold": [
+      {
+        "units": "degree_Celsius", 
+        "value": "# (=Tb)", 
+        "logic": ">"
+      }
+    ], 
+    "output": {
+      "reference": "ET-SCI", 
+      "canonical_units": "Kelvin second", 
+      "cell_method": "time: mean within days time: sum over days", 
+      "long_name": "Cooling Degree Days (Tmean > #C)", 
+      "standard_name": "integral_of_air_temperature_deficit_wrt_time", 
+      "legend_units": "degree-days", 
+      "units": "degree_Celsius day"
+    }
+  }, 
+  {
+    "cf_level": "CF-1.6", 
+    "varname": "ddlt#", 
+    "n_thresholds": "1", 
+    "n_inputs": "1", 
+    "freq": "ann/sea/mon", 
+    "input": [
+      {
+        "standard_name": "air_temperature", 
+        "known_variables": [
+          "tas", 
+          "tas-adjust", 
+          "tmean", 
+          "tm", 
+          "tg", 
+          "meant"
+        ], 
+        "cell_method": "time: mean within days"
+      }
+    ], 
+    "et": {
+      "comment": "_", 
+      "long_name": "_", 
+      "short_name": "_", 
+      "definition": "_"
+    }, 
+    "threshold": [
+      {
+        "units": "degree_Celsius", 
+        "value": "#", 
+        "logic": "<"
+      }
+    ], 
+    "output": {
+      "reference": "_", 
+      "canonical_units": "Kelvin second", 
+      "cell_method": "time: mean within days time: sum over days", 
+      "long_name": "Degree Days (Tmean < #C)", 
+      "standard_name": "integral_of_air_temperature_deficit_wrt_time", 
+      "legend_units": "degree-days", 
+      "units": "degree_Celsius day"
+    }
+  }, 
+  {
+    "cf_level": "CF-1.6", 
+    "varname": "gddgrow#", 
+    "n_thresholds": "1", 
+    "n_inputs": "1", 
+    "freq": "ann", 
+    "input": [
+      {
+        "standard_name": "air_temperature", 
+        "known_variables": [
+          "tas", 
+          "tas-adjust", 
+          "tmean", 
+          "tm", 
+          "tg", 
+          "meant"
+        ], 
+        "cell_method": "time: mean within days"
+      }
+    ], 
+    "et": {
+      "comment": "_", 
+      "long_name": "Growing degree days", 
+      "short_name": "gddgrow", 
+      "definition": "Annual sum of TM - Tb (where Tb is a user- defined location-specific base temperature and TM >Tb)"
+    }, 
+    "threshold": [
+      {
+        "units": "degree_Celsius", 
+        "value": "# (=Tb)", 
+        "logic": ">"
+      }
+    ], 
+    "output": {
+      "reference": "ET-SCI", 
+      "canonical_units": "Kelvin second", 
+      "cell_method": "time: mean within days time: sum over days", 
+      "long_name": "Annual Growing Degree Days (Tmean > 5C)", 
+      "standard_name": "integral_of_air_temperature_excess_wrt_time", 
+      "legend_units": "degree-days", 
+      "units": "degree_Celsius day"
+    }
+  }
+]
