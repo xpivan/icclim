@@ -30,6 +30,8 @@ import time_subset
 import maps
 import calc_ind
 import util.calc as calc
+import metadata_database.metadata_database as metadata
+import pdb
 
 from util import user_indice as ui
 
@@ -616,29 +618,39 @@ def indice(in_files,
         
         
         # title
-        if threshold != None:
-            onc.setncattr('title', 'Indice {0} with user defined threshold'.format(indice_name))
-        else:
-            set_globattr.title(onc, indice_name)
+        
+        global_metadata = metadata.GlobalMetadata("metadata_database/metadata_global_v3.json")
+#-#        if threshold != None:
+#-#            onc.setncattr('title', 'Indice {0} with user defined threshold'.format(indice_name))
+#-#        else:
+#-#            set_globattr.title(onc, indice_name)
             
-        set_globattr.references(onc)
-        set_globattr.comment(onc, indice_name)
-        set_globattr.institution(onc, institution_str='Climate impact portal (http://climate4impact.eu)')
-        set_globattr.history2(onc, slice_mode, indice_name, time_range)
-        onc.setncattr('source', '')
-        onc.setncattr('Conventions','CF-1.6')
+        # Set global attributes
+        for global_attr in global_metadata.get_attributes():
+            global_metadata.write_metadata(global_attr, onc)
+#-#        set_globattr.references(onc)
+#-#        set_globattr.comment(onc, indice_name)
+#-#        set_globattr.institution(onc, institution_str='Climate impact portal (http://climate4impact.eu)')
+#-#        set_globattr.history2(onc, slice_mode, indice_name, time_range)
+#-#        onc.setncattr('source', '')
+#-#        onc.setncattr('Conventions','CF-1.6')
         
         
+        var_metadata = metadata.VariableMetadata("metadata_database/climate_indices_b_DEF.json")
+        var_metadata.set_current_indice(indice_name)
 
-        if threshold == None:
-            eval('set_longname_units.' + indice_name + '_setvarattr(ind)')
-            ind.setncattr('standard_name', 'ECA_indice')         
-        else:
-            eval('set_longname_units_custom_indices.' + indice_name + '_setvarattr(ind, threshold)')
-            ind.setncattr('standard_name', 'ECA_indice with user defined threshold')
-            
-            if nb_user_thresholds > 1:
-                eval('set_longname_units_custom_indices.' + indice_name + '_setthresholdattr(thresholdvar)')
+        for var_key, var_value in var_metadata.get_attributes(select_key="output"):
+            var_metadata.write_metadata(ind, var_key, var_value)
+
+#-#        if threshold == None:
+#-#            eval('set_longname_units.' + indice_name + '_setvarattr(ind)')
+#-#            ind.setncattr('standard_name', 'ECA_indice')         
+#-#        else:
+#-#            eval('set_longname_units_custom_indices.' + indice_name + '_setvarattr(ind, threshold)')
+#-#            ind.setncattr('standard_name', 'ECA_indice with user defined threshold')
+#-#            
+#-#            if nb_user_thresholds > 1:
+#-#                eval('set_longname_units_custom_indices.' + indice_name + '_setthresholdattr(thresholdvar)')
         
     
     #### for all:
