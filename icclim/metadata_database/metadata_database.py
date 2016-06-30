@@ -35,7 +35,6 @@ class VariableMetadata(object):
         rtype dict
 
         '''
-        pdb.set_trace()
         indice_lower = indice_name.lower()
         indice_index = [index['varname'] for index in self.jparsed].index(indice_lower)
         out_meta_dict = self.jparsed[indice_index]
@@ -106,20 +105,20 @@ class VariableMetadata(object):
         rtype bool
 
         '''
-        ret_value = True
-        curr_meta_dict = self.get_indice_dict(indice_name)
-
         fstandard_names = []
         for v in VARS.keys():
             inc = Dataset(VARS[v]['files_years'].keys()[0], 'r')
             ncVar = inc.variables[v]
             fstandard_names.append(ncVar.standard_name)
 
-        jstandard_names = []
+        ret_value = True
+        curr_meta_dict = self.get_indice_dict(indice_name)
         for idx in range(int(curr_meta_dict['n_inputs'])):
-            jstandard_names.append(curr_meta_dict['input'][idx]['standard_name'])
+            jstandard_name = curr_meta_dict['input'][idx]['standard_name']
+            if not jstandard_name in fstandard_names:
+                ret_value = ret_value and False
 
-        pdb.set_trace()
+        return ret_value
 
     def is_varname_consistent(self, var_name, indice_name):
         '''
