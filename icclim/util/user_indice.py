@@ -35,7 +35,7 @@ def check_params(user_indice, time_range=None, vars=None):
     '''
     Checks if a set of user parameters is correct for selected calc_operation
     '''
-    
+
     if 'indice_name' not in user_indice.keys():
         raise IOError(" 'indice_name' is required for a user defines indice")
     
@@ -71,7 +71,6 @@ def check_params(user_indice, time_range=None, vars=None):
                 if ('var_type') not in user_indice.keys():
                     raise IOError("If at least one of thresholds is a percentile,  'var_type' "
                                     "is required ('var_type' could be a list).")
-
 
 def get_given_params(user_indice):
     given_params_list = user_indice.keys()

@@ -1,0 +1,10 @@
+{
+    "input" : {
+        "known_variables" : {
+            "tasmin" : [ "tasmin", "tasminadjust", "tmin", "tn", "mint" ],
+            "tasmax" : [ "tasmax", "tasmaxadjust", "tmax", "tx", "maxt" ],
+            "tas" : [ "tas", "tasadjust", "tmean", "tm", "tg", "meant" ],
+            "pr" : [ "pr", "pradjust", "rr", "prec", "precip" ]
+        }
+    }
+}

@@ -134,6 +134,9 @@ def indice(in_files,
     .. warning:: If ``out_file`` already exists, Icclim will overwrite it!
 
     '''
+    # Load external variable meta data file
+    var_metadata = metadata.VariableMetadata("metadata_database/climate_indices_DEF.json",
+                                             alt_names="metadata_database/alternative_variable_names.json")
     
     #######################################################
     ########## User indice check params
@@ -141,7 +144,9 @@ def indice(in_files,
         if user_indice==None:
             raise IOError(" 'user_indice' is required as a dictionary with user defined parameters.")
         else:
-            ui.check_params(user_indice, time_range=time_range, vars=var_name)
+            ui.check_params(user_indice,
+                            time_range=time_range,
+                            vars=var_name)
                 
             if user_indice['calc_operation']=='anomaly':
                 slice_mode=None
@@ -155,6 +160,12 @@ def indice(in_files,
     #######################################################            
 
     else:
+        # Check input data meta data consistency
+        if not var_metadata.is_varname_consistent(var_name, indice_name):
+            err_msg = "Invalid var_name for indice " + indice_name + " according to the ICCLIM variable metadata file"
+            raise RuntimeError(err_msg)
+
+        # Get the indice type
         indice_type = get_key_by_value_from_dict(maps.map_indice_type, indice_name) # 'simple'/'multivariable'/'percentile_based'/'percentile_based_multivariable'
 
     
@@ -358,6 +369,10 @@ def indice(in_files,
 
     global chunk_counter
     chunk_counter = 0
+
+    if not var_metadata.is_standard_name_consistent(VARS, indice_name):
+        err_msg = "Invalid standard_name for variable " + v + " and indice " + indice_name + " according to the ICCLIM variable metadata file"
+        raise RuntimeError(err_msg)
     
     #####    for each chunk
     for tile_id in tile_map:
@@ -373,6 +388,7 @@ def indice(in_files,
             if chunk_counter == 0:
 
                 inc = Dataset(VARS[v]['files_years'].keys()[0], 'r')     
+
                 ncVar = inc.variables[v]    
                 dimensions_list_current_var = ncVar.dimensions
             
@@ -392,9 +408,6 @@ def indice(in_files,
                 VARS[v]['time_calendar']=calend
                 VARS[v]['time_units']=units
 
-                
-               
-               
                 var_units = getattr(inc.variables[v],'units')
 
                 # Units conversion
@@ -634,9 +647,7 @@ def indice(in_files,
 #-#        set_globattr.history2(onc, slice_mode, indice_name, time_range)
 #-#        onc.setncattr('source', '')
 #-#        onc.setncattr('Conventions','CF-1.6')
-        
-        
-        var_metadata = metadata.VariableMetadata("metadata_database/climate_indices_b_DEF.json")
+
         var_metadata.set_current_indice(indice_name)
 
         for var_key, var_value in var_metadata.get_attributes(select_key="output"):
