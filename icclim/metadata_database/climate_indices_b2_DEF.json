@@ -8,13 +8,7 @@
     "input": [
       {
         "standard_name": "air_temperature", 
-        "known_variables": [
-          "tasmin", 
-          "tasmin-adjust", 
-          "tmin", 
-          "tn", 
-          "mint"
-        ], 
+        "known_variables": "tasmin", 
         "cell_method": "time: minimum within days"
       }
     ], 
@@ -50,13 +44,7 @@
     "input": [
       {
         "standard_name": "air_temperature", 
-        "known_variables": [
-          "tasmin", 
-          "tasmin-adjust", 
-          "tmin", 
-          "tn", 
-          "mint"
-        ], 
+        "known_variables": "tasmin", 
         "cell_method": "time: minimum within days"
       }
     ], 
@@ -92,13 +80,7 @@
     "input": [
       {
         "standard_name": "air_temperature", 
-        "known_variables": [
-          "tasmin", 
-          "tasmin-adjust", 
-          "tmin", 
-          "tn", 
-          "mint"
-        ], 
+        "known_variables": "tasmin", 
         "cell_method": "time: minimum within days"
       }
     ], 
@@ -134,13 +116,7 @@
     "input": [
       {
         "standard_name": "air_temperature", 
-        "known_variables": [
-          "tasmin", 
-          "tasmin-adjust", 
-          "tmin", 
-          "tn", 
-          "mint"
-        ], 
+        "known_variables": "tasmin", 
         "cell_method": "time: minimum within days"
       }
     ], 
@@ -176,13 +152,7 @@
     "input": [
       {
         "standard_name": "air_temperature", 
-        "known_variables": [
-          "tasmax", 
-          "tasmax-adjust", 
-          "tmax", 
-          "tx", 
-          "maxt"
-        ], 
+        "known_variables": "tasmax", 
         "cell_method": "time: maximum within days"
       }
     ], 
@@ -218,13 +188,7 @@
     "input": [
       {
         "standard_name": "air_temperature", 
-        "known_variables": [
-          "tasmax", 
-          "tasmax-adjust", 
-          "tmax", 
-          "tx", 
-          "maxt"
-        ], 
+        "known_variables": "tasmax", 
         "cell_method": "time: maximum within days"
       }
     ], 
@@ -260,13 +224,7 @@
     "input": [
       {
         "standard_name": "air_temperature", 
-        "known_variables": [
-          "tasmax", 
-          "tasmax-adjust", 
-          "tmax", 
-          "tx", 
-          "maxt"
-        ], 
+        "known_variables": "tasmax", 
         "cell_method": "time: maximum within days"
       }
     ], 
@@ -302,13 +260,7 @@
     "input": [
       {
         "standard_name": "air_temperature", 
-        "known_variables": [
-          "tasmax", 
-          "tasmax-adjust", 
-          "tmax", 
-          "tx", 
-          "maxt"
-        ], 
+        "known_variables": "tasmax", 
         "cell_method": "time: maximum within days"
       }
     ], 
@@ -344,13 +296,7 @@
     "input": [
       {
         "standard_name": "air_temperature", 
-        "known_variables": [
-          "tasmin", 
-          "tasmin-adjust", 
-          "tmin", 
-          "tn", 
-          "mint"
-        ], 
+        "known_variables": "tasmin", 
         "cell_method": "time: minimum within days"
       }
     ], 
@@ -386,14 +332,7 @@
     "input": [
       {
         "standard_name": "air_temperature", 
-        "known_variables": [
-          "tas", 
-          "tas-adjust", 
-          "tmean", 
-          "tm", 
-          "tg", 
-          "meant"
-        ], 
+        "known_variables": "tas", 
         "cell_method": "time: mean within days"
       }
     ], 
@@ -429,14 +368,7 @@
     "input": [
       {
         "standard_name": "air_temperature", 
-        "known_variables": [
-          "tas", 
-          "tas-adjust", 
-          "tmean", 
-          "tm", 
-          "tg", 
-          "meant"
-        ], 
+        "known_variables": "tas", 
         "cell_method": "time: mean within days"
       }
     ], 
@@ -472,14 +404,7 @@
     "input": [
       {
         "standard_name": "air_temperature", 
-        "known_variables": [
-          "tas", 
-          "tas-adjust", 
-          "tmean", 
-          "tm", 
-          "tg", 
-          "meant"
-        ], 
+        "known_variables": "tas", 
         "cell_method": "time: mean within days"
       }
     ], 
@@ -515,14 +440,7 @@
     "input": [
       {
         "standard_name": "air_temperature", 
-        "known_variables": [
-          "tas", 
-          "tas-adjust", 
-          "tmean", 
-          "tm", 
-          "tg", 
-          "meant"
-        ], 
+        "known_variables": "tas", 
         "cell_method": "time: mean within days"
       }
     ], 
@@ -558,13 +476,7 @@
     "input": [
       {
         "standard_name": "air_temperature", 
-        "known_variables": [
-          "tasmin", 
-          "tasmin-adjust", 
-          "tmin", 
-          "tn", 
-          "mint"
-        ], 
+        "known_variables": "tasmin", 
         "cell_method": "time: minimum within days"
       }
     ], 
@@ -582,7 +494,7 @@
       }
     ], 
     "output": {
-      "reference": "_", 
+      "reference": "user", 
       "canonical_units": "1", 
       "cell_method": "time: minimum within days time: sum over days", 
       "long_name": "Number of days with Tmin > #C", 
@@ -600,13 +512,7 @@
     "input": [
       {
         "standard_name": "air_temperature", 
-        "known_variables": [
-          "tasmin", 
-          "tasmin-adjust", 
-          "tmin", 
-          "tn", 
-          "mint"
-        ], 
+        "known_variables": "tasmin", 
         "cell_method": "time: minimum within days"
       }
     ], 
@@ -624,7 +530,7 @@
       }
     ], 
     "output": {
-      "reference": "_", 
+      "reference": "user", 
       "canonical_units": "1", 
       "cell_method": "time: minimum within days time: sum over days", 
       "long_name": "Number of days with Tmin < #C", 
@@ -642,13 +548,7 @@
     "input": [
       {
         "standard_name": "air_temperature", 
-        "known_variables": [
-          "tasmin", 
-          "tasmin-adjust", 
-          "tmin", 
-          "tn", 
-          "mint"
-        ], 
+        "known_variables": "tasmin", 
         "cell_method": "time: minimum within days"
       }
     ], 
@@ -666,7 +566,7 @@
       }
     ], 
     "output": {
-      "reference": "_", 
+      "reference": "user", 
       "canonical_units": "1", 
       "cell_method": "time: minimum within days time: sum over days", 
       "long_name": "Number of days with Tmin >= #C", 
@@ -684,13 +584,7 @@
     "input": [
       {
         "standard_name": "air_temperature", 
-        "known_variables": [
-          "tasmin", 
-          "tasmin-adjust", 
-          "tmin", 
-          "tn", 
-          "mint"
-        ], 
+        "known_variables": "tasmin", 
         "cell_method": "time: minimum within days"
       }
     ], 
@@ -708,7 +602,7 @@
       }
     ], 
     "output": {
-      "reference": "_", 
+      "reference": "user", 
       "canonical_units": "1", 
       "cell_method": "time: minimum within days time: sum over days", 
       "long_name": "Number of days with Tmin <= #C", 
@@ -726,13 +620,7 @@
     "input": [
       {
         "standard_name": "air_temperature", 
-        "known_variables": [
-          "tasmax", 
-          "tasmax-adjust", 
-          "tmax", 
-          "tx", 
-          "maxt"
-        ], 
+        "known_variables": "tasmax", 
         "cell_method": "time: maximum within days"
       }
     ], 
@@ -750,7 +638,7 @@
       }
     ], 
     "output": {
-      "reference": "_", 
+      "reference": "user", 
       "canonical_units": "1", 
       "cell_method": "time: maximum within days time: sum over days", 
       "long_name": "Number of days with Tmax > #C", 
@@ -768,13 +656,7 @@
     "input": [
       {
         "standard_name": "air_temperature", 
-        "known_variables": [
-          "tasmax", 
-          "tasmax-adjust", 
-          "tmax", 
-          "tx", 
-          "maxt"
-        ], 
+        "known_variables": "tasmax", 
         "cell_method": "time: maximum within days"
       }
     ], 
@@ -792,7 +674,7 @@
       }
     ], 
     "output": {
-      "reference": "_", 
+      "reference": "user", 
       "canonical_units": "1", 
       "cell_method": "time: maximum within days time: sum over days", 
       "long_name": "Number of days with Tmax < #C", 
@@ -810,13 +692,7 @@
     "input": [
       {
         "standard_name": "air_temperature", 
-        "known_variables": [
-          "tasmax", 
-          "tasmax-adjust", 
-          "tmax", 
-          "tx", 
-          "maxt"
-        ], 
+        "known_variables": "tasmax", 
         "cell_method": "time: maximum within days"
       }
     ], 
@@ -834,7 +710,7 @@
       }
     ], 
     "output": {
-      "reference": "_", 
+      "reference": "user", 
       "canonical_units": "1", 
       "cell_method": "time: maximum within days time: sum over days", 
       "long_name": "Number of days with Tmax >= #C", 
@@ -852,13 +728,7 @@
     "input": [
       {
         "standard_name": "air_temperature", 
-        "known_variables": [
-          "tasmax", 
-          "tasmax-adjust", 
-          "tmax", 
-          "tx", 
-          "maxt"
-        ], 
+        "known_variables": "tasmax", 
         "cell_method": "time: maximum within days"
       }
     ], 
@@ -876,7 +746,7 @@
       }
     ], 
     "output": {
-      "reference": "_", 
+      "reference": "user", 
       "canonical_units": "1", 
       "cell_method": "time: maximum within days time: sum over days", 
       "long_name": "Number of days with Tmax <= #C", 
@@ -894,14 +764,7 @@
     "input": [
       {
         "standard_name": "air_temperature", 
-        "known_variables": [
-          "tas", 
-          "tas-adjust", 
-          "tmean", 
-          "tm", 
-          "tg", 
-          "meant"
-        ], 
+        "known_variables": "tas", 
         "cell_method": "time: mean within days"
       }
     ], 
@@ -919,7 +782,7 @@
       }
     ], 
     "output": {
-      "reference": "_", 
+      "reference": "user", 
       "canonical_units": "1", 
       "cell_method": "time: mean within days time: sum over days", 
       "long_name": "Number of days with Tmean > #C", 
@@ -937,14 +800,7 @@
     "input": [
       {
         "standard_name": "air_temperature", 
-        "known_variables": [
-          "tas", 
-          "tas-adjust", 
-          "tmean", 
-          "tm", 
-          "tg", 
-          "meant"
-        ], 
+        "known_variables": "tas", 
         "cell_method": "time: mean within days"
       }
     ], 
@@ -962,7 +818,7 @@
       }
     ], 
     "output": {
-      "reference": "_", 
+      "reference": "user", 
       "canonical_units": "1", 
       "cell_method": "time: mean within days time: sum over days", 
       "long_name": "Number of days with Tmean < #C", 
@@ -980,14 +836,7 @@
     "input": [
       {
         "standard_name": "air_temperature", 
-        "known_variables": [
-          "tas", 
-          "tas-adjust", 
-          "tmean", 
-          "tm", 
-          "tg", 
-          "meant"
-        ], 
+        "known_variables": "tas", 
         "cell_method": "time: mean within days"
       }
     ], 
@@ -1005,7 +854,7 @@
       }
     ], 
     "output": {
-      "reference": "_", 
+      "reference": "user", 
       "canonical_units": "1", 
       "cell_method": "time: mean within days time: sum over days", 
       "long_name": "Number of days with Tmean >= #C", 
@@ -1023,14 +872,7 @@
     "input": [
       {
         "standard_name": "air_temperature", 
-        "known_variables": [
-          "tas", 
-          "tas-adjust", 
-          "tmean", 
-          "tm", 
-          "tg", 
-          "meant"
-        ], 
+        "known_variables": "tas", 
         "cell_method": "time: mean within days"
       }
     ], 
@@ -1048,7 +890,7 @@
       }
     ], 
     "output": {
-      "reference": "_", 
+      "reference": "user", 
       "canonical_units": "1", 
       "cell_method": "time: mean within days time: sum over days", 
       "long_name": "Number of days with Tmean <= #C", 
@@ -1066,13 +908,7 @@
     "input": [
       {
         "standard_name": "air_temperature", 
-        "known_variables": [
-          "tasmin", 
-          "tasmin-adjust", 
-          "tmin", 
-          "tn", 
-          "mint"
-        ], 
+        "known_variables": "tasmin", 
         "cell_method": "time: minimum within days"
       }
     ], 
@@ -1090,7 +926,7 @@
       }
     ], 
     "output": {
-      "reference": "_", 
+      "reference": "user", 
       "canonical_units": "day", 
       "cell_method": "time: minimum within days time: maximum over days", 
       "long_name": "Maximum number of consequtive days with Tmin > #C", 
@@ -1108,13 +944,7 @@
     "input": [
       {
         "standard_name": "air_temperature", 
-        "known_variables": [
-          "tasmin", 
-          "tasmin-adjust", 
-          "tmin", 
-          "tn", 
-          "mint"
-        ], 
+        "known_variables": "tasmin", 
         "cell_method": "time: minimum within days"
       }
     ], 
@@ -1132,7 +962,7 @@
       }
     ], 
     "output": {
-      "reference": "_", 
+      "reference": "user", 
       "canonical_units": "day", 
       "cell_method": "time: minimum within days time: maximum over days", 
       "long_name": "Maximum number of consequtive days with Tmin < #C", 
@@ -1150,13 +980,7 @@
     "input": [
       {
         "standard_name": "air_temperature", 
-        "known_variables": [
-          "tasmin", 
-          "tasmin-adjust", 
-          "tmin", 
-          "tn", 
-          "mint"
-        ], 
+        "known_variables": "tasmin", 
         "cell_method": "time: minimum within days"
       }
     ], 
@@ -1174,7 +998,7 @@
       }
     ], 
     "output": {
-      "reference": "_", 
+      "reference": "user", 
       "canonical_units": "day", 
       "cell_method": "time: minimum within days time: maximum over days", 
       "long_name": "Maximum number of consequtive days with Tmin >= #C", 
@@ -1192,13 +1016,7 @@
     "input": [
       {
         "standard_name": "air_temperature", 
-        "known_variables": [
-          "tasmin", 
-          "tasmin-adjust", 
-          "tmin", 
-          "tn", 
-          "mint"
-        ], 
+        "known_variables": "tasmin", 
         "cell_method": "time: minimum within days"
       }
     ], 
@@ -1216,7 +1034,7 @@
       }
     ], 
     "output": {
-      "reference": "_", 
+      "reference": "user", 
       "canonical_units": "day", 
       "cell_method": "time: minimum within days time: maximum over days", 
       "long_name": "Maximum number of consequtive days with Tmin <= #C", 
@@ -1234,13 +1052,7 @@
     "input": [
       {
         "standard_name": "air_temperature", 
-        "known_variables": [
-          "tasmax", 
-          "tasmax-adjust", 
-          "tmax", 
-          "tx", 
-          "maxt"
-        ], 
+        "known_variables": "tasmax", 
         "cell_method": "time: maximum within days"
       }
     ], 
@@ -1258,7 +1070,7 @@
       }
     ], 
     "output": {
-      "reference": "_", 
+      "reference": "user", 
       "canonical_units": "day", 
       "cell_method": "time: maximum within days time: maximum over days", 
       "long_name": "Maximum number of consequtive days with Tmax > #C", 
@@ -1276,13 +1088,7 @@
     "input": [
       {
         "standard_name": "air_temperature", 
-        "known_variables": [
-          "tasmax", 
-          "tasmax-adjust", 
-          "tmax", 
-          "tx", 
-          "maxt"
-        ], 
+        "known_variables": "tasmax", 
         "cell_method": "time: maximum within days"
       }
     ], 
@@ -1300,7 +1106,7 @@
       }
     ], 
     "output": {
-      "reference": "_", 
+      "reference": "user", 
       "canonical_units": "day", 
       "cell_method": "time: maximum within days time: maximum over days", 
       "long_name": "Maximum number of consequtive days with Tmax < #C", 
@@ -1318,13 +1124,7 @@
     "input": [
       {
         "standard_name": "air_temperature", 
-        "known_variables": [
-          "tasmax", 
-          "tasmax-adjust", 
-          "tmax", 
-          "tx", 
-          "maxt"
-        ], 
+        "known_variables": "tasmax", 
         "cell_method": "time: maximum within days"
       }
     ], 
@@ -1342,7 +1142,7 @@
       }
     ], 
     "output": {
-      "reference": "_", 
+      "reference": "user", 
       "canonical_units": "day", 
       "cell_method": "time: maximum within days time: maximum over days", 
       "long_name": "Maximum number of consequtive days with Tmax >= #C", 
@@ -1360,13 +1160,7 @@
     "input": [
       {
         "standard_name": "air_temperature", 
-        "known_variables": [
-          "tasmax", 
-          "tasmax-adjust", 
-          "tmax", 
-          "tx", 
-          "maxt"
-        ], 
+        "known_variables": "tasmax", 
         "cell_method": "time: maximum within days"
       }
     ], 
@@ -1384,7 +1178,7 @@
       }
     ], 
     "output": {
-      "reference": "_", 
+      "reference": "user", 
       "canonical_units": "day", 
       "cell_method": "time: maximum within days time: maximum over days", 
       "long_name": "Maximum number of consequtive days with Tmax <= #C", 
@@ -1402,14 +1196,7 @@
     "input": [
       {
         "standard_name": "air_temperature", 
-        "known_variables": [
-          "tas", 
-          "tas-adjust", 
-          "tmean", 
-          "tm", 
-          "tg", 
-          "meant"
-        ], 
+        "known_variables": "tas", 
         "cell_method": "time: mean within days"
       }
     ], 
@@ -1427,7 +1214,7 @@
       }
     ], 
     "output": {
-      "reference": "_", 
+      "reference": "user", 
       "canonical_units": "day", 
       "cell_method": "time: mean within days time: maximum over days", 
       "long_name": "Maximum number of consequtive days with Tmean > #C", 
@@ -1445,14 +1232,7 @@
     "input": [
       {
         "standard_name": "air_temperature", 
-        "known_variables": [
-          "tas", 
-          "tas-adjust", 
-          "tmean", 
-          "tm", 
-          "tg", 
-          "meant"
-        ], 
+        "known_variables": "tas", 
         "cell_method": "time: mean within days"
       }
     ], 
@@ -1470,7 +1250,7 @@
       }
     ], 
     "output": {
-      "reference": "_", 
+      "reference": "user", 
       "canonical_units": "day", 
       "cell_method": "time: mean within days time: maximum over days", 
       "long_name": "Maximum number of consequtive days with Tmean < #C", 
@@ -1488,14 +1268,7 @@
     "input": [
       {
         "standard_name": "air_temperature", 
-        "known_variables": [
-          "tas", 
-          "tas-adjust", 
-          "tmean", 
-          "tm", 
-          "tg", 
-          "meant"
-        ], 
+        "known_variables": "tas", 
         "cell_method": "time: mean within days"
       }
     ], 
@@ -1513,7 +1286,7 @@
       }
     ], 
     "output": {
-      "reference": "_", 
+      "reference": "user", 
       "canonical_units": "day", 
       "cell_method": "time: mean within days time: maximum over days", 
       "long_name": "Maximum number of consequtive days with Tmean >= #C", 
@@ -1531,14 +1304,7 @@
     "input": [
       {
         "standard_name": "air_temperature", 
-        "known_variables": [
-          "tas", 
-          "tas-adjust", 
-          "tmean", 
-          "tm", 
-          "tg", 
-          "meant"
-        ], 
+        "known_variables": "tas", 
         "cell_method": "time: mean within days"
       }
     ], 
@@ -1556,7 +1322,7 @@
       }
     ], 
     "output": {
-      "reference": "_", 
+      "reference": "user", 
       "canonical_units": "day", 
       "cell_method": "time: mean within days time: maximum over days", 
       "long_name": "Maximum number of consequtive days with Tmean <= #C", 
@@ -1574,13 +1340,7 @@
     "input": [
       {
         "standard_name": "air_temperature", 
-        "known_variables": [
-          "tasmax", 
-          "tasmax-adjust", 
-          "tmax", 
-          "tx", 
-          "maxt"
-        ], 
+        "known_variables": "tasmax", 
         "cell_method": "time: maximum within days"
       }
     ], 
@@ -1610,13 +1370,7 @@
     "input": [
       {
         "standard_name": "air_temperature", 
-        "known_variables": [
-          "tasmin", 
-          "tasmin-adjust", 
-          "tmin", 
-          "tn", 
-          "mint"
-        ], 
+        "known_variables": "tasmin", 
         "cell_method": "time: minimum within days"
       }
     ], 
@@ -1646,13 +1400,7 @@
     "input": [
       {
         "standard_name": "air_temperature", 
-        "known_variables": [
-          "tasmax", 
-          "tasmax-adjust", 
-          "tmax", 
-          "tx", 
-          "maxt"
-        ], 
+        "known_variables": "tasmax", 
         "cell_method": "time: maximum within days"
       }
     ], 
@@ -1682,13 +1430,7 @@
     "input": [
       {
         "standard_name": "air_temperature", 
-        "known_variables": [
-          "tasmin", 
-          "tasmin-adjust", 
-          "tmin", 
-          "tn", 
-          "mint"
-        ], 
+        "known_variables": "tasmin", 
         "cell_method": "time: minimum within days"
       }
     ], 
@@ -1718,13 +1460,7 @@
     "input": [
       {
         "standard_name": "air_temperature", 
-        "known_variables": [
-          "tasmax", 
-          "tasmax-adjust", 
-          "tmax", 
-          "tx", 
-          "maxt"
-        ], 
+        "known_variables": "tasmax", 
         "cell_method": "time: maximum within days"
       }
     ], 
@@ -1736,7 +1472,7 @@
     }, 
     "threshold": {}, 
     "output": {
-      "reference": "_", 
+      "reference": "user", 
       "canonical_units": "Kelvin", 
       "cell_method": "time: maximum within days time: maximum over days", 
       "long_name": "Maximum daily maximum temperature", 
@@ -1754,13 +1490,7 @@
     "input": [
       {
         "standard_name": "air_temperature", 
-        "known_variables": [
-          "tasmin", 
-          "tasmin-adjust", 
-          "tmin", 
-          "tn", 
-          "mint"
-        ], 
+        "known_variables": "tasmin", 
         "cell_method": "time: minimum within days"
       }
     ], 
@@ -1772,7 +1502,7 @@
     }, 
     "threshold": {}, 
     "output": {
-      "reference": "_", 
+      "reference": "user", 
       "canonical_units": "Kelvin", 
       "cell_method": "time: minimum within days time: maximum over days", 
       "long_name": "Maximum daily minimum temperature", 
@@ -1790,14 +1520,7 @@
     "input": [
       {
         "standard_name": "air_temperature", 
-        "known_variables": [
-          "tas", 
-          "tas-adjust", 
-          "tmean", 
-          "tm", 
-          "tg", 
-          "meant"
-        ], 
+        "known_variables": "tas", 
         "cell_method": "time: mean within days"
       }
     ], 
@@ -1809,7 +1532,7 @@
     }, 
     "threshold": {}, 
     "output": {
-      "reference": "_", 
+      "reference": "user", 
       "canonical_units": "Kelvin", 
       "cell_method": "time: maximum within days time: minimum over days", 
       "long_name": "Minimum daily maximum temperature", 
@@ -1827,14 +1550,7 @@
     "input": [
       {
         "standard_name": "air_temperature", 
-        "known_variables": [
-          "tas", 
-          "tas-adjust", 
-          "tmean", 
-          "tm", 
-          "tg", 
-          "meant"
-        ], 
+        "known_variables": "tas", 
         "cell_method": "time: mean within days"
       }
     ], 
@@ -1846,7 +1562,7 @@
     }, 
     "threshold": {}, 
     "output": {
-      "reference": "_", 
+      "reference": "user", 
       "canonical_units": "Kelvin", 
       "cell_method": "time: minimum within days time: minimum over days", 
       "long_name": "Minimum daily minimum temperature", 
@@ -1864,13 +1580,7 @@
     "input": [
       {
         "standard_name": "air_temperature", 
-        "known_variables": [
-          "tasmax", 
-          "tasmax-adjust", 
-          "tmax", 
-          "tx", 
-          "maxt"
-        ], 
+        "known_variables": "tasmax", 
         "cell_method": "time: maximum within days"
       }
     ], 
@@ -1882,7 +1592,7 @@
     }, 
     "threshold": {}, 
     "output": {
-      "reference": "_", 
+      "reference": "user", 
       "canonical_units": "Kelvin", 
       "cell_method": "time: maximum within days time: mean over days", 
       "long_name": "Mean daily maximum temperature", 
@@ -1900,13 +1610,7 @@
     "input": [
       {
         "standard_name": "air_temperature", 
-        "known_variables": [
-          "tasmin", 
-          "tasmin-adjust", 
-          "tmin", 
-          "tn", 
-          "mint"
-        ], 
+        "known_variables": "tasmin", 
         "cell_method": "time: minimum within days"
       }
     ], 
@@ -1918,7 +1622,7 @@
     }, 
     "threshold": {}, 
     "output": {
-      "reference": "_", 
+      "reference": "user", 
       "canonical_units": "Kelvin", 
       "cell_method": "time: minimum within days time: mean over days", 
       "long_name": "Mean daily minimum temperature", 
@@ -1936,14 +1640,7 @@
     "input": [
       {
         "standard_name": "air_temperature", 
-        "known_variables": [
-          "tas", 
-          "tas-adjust", 
-          "tmean", 
-          "tm", 
-          "tg", 
-          "meant"
-        ], 
+        "known_variables": "tas", 
         "cell_method": "time: mean within days"
       }
     ], 
@@ -1955,7 +1652,7 @@
     }, 
     "threshold": {}, 
     "output": {
-      "reference": "_", 
+      "reference": "user", 
       "canonical_units": "Kelvin", 
       "cell_method": "time: mean within days time: maximum over days", 
       "long_name": "Maximum daily mean temperature", 
@@ -1973,14 +1670,7 @@
     "input": [
       {
         "standard_name": "air_temperature", 
-        "known_variables": [
-          "tas", 
-          "tas-adjust", 
-          "tmean", 
-          "tm", 
-          "tg", 
-          "meant"
-        ], 
+        "known_variables": "tas", 
         "cell_method": "time: mean within days"
       }
     ], 
@@ -1992,7 +1682,7 @@
     }, 
     "threshold": {}, 
     "output": {
-      "reference": "_", 
+      "reference": "user", 
       "canonical_units": "Kelvin", 
       "cell_method": "time: mean within days time: maximum over days", 
       "long_name": "Minimum daily mean temperature", 
@@ -2010,14 +1700,7 @@
     "input": [
       {
         "standard_name": "air_temperature", 
-        "known_variables": [
-          "tas", 
-          "tas-adjust", 
-          "tmean", 
-          "tm", 
-          "tg", 
-          "meant"
-        ], 
+        "known_variables": "tas", 
         "cell_method": "time: mean within days"
       }
     ], 
@@ -2029,7 +1712,7 @@
     }, 
     "threshold": {}, 
     "output": {
-      "reference": "_", 
+      "reference": "user", 
       "canonical_units": "Kelvin", 
       "cell_method": "time: mean within days time: mean over days", 
       "long_name": "Mean daily mean temperature", 
@@ -2047,24 +1730,12 @@
     "input": [
       {
         "standard_name": "air_temperature", 
-        "known_variables": [
-          "tasmin", 
-          "tasmin-adjust", 
-          "tmin", 
-          "tn", 
-          "mint"
-        ], 
+        "known_variables": "tasmin", 
         "cell_method": "time: minimum within days"
       }, 
       {
         "standard_name": "air_temperature", 
-        "known_variables": [
-          "tasmax", 
-          "tasmax-adjust", 
-          "tmax", 
-          "tx", 
-          "maxt"
-        ], 
+        "known_variables": "tasmax", 
         "cell_method": "time: maximum within days"
       }
     ], 
@@ -2094,14 +1765,7 @@
     "input": [
       {
         "standard_name": "air_temperature", 
-        "known_variables": [
-          "tas", 
-          "tas-adjust", 
-          "tmean", 
-          "tm", 
-          "tg", 
-          "meant"
-        ], 
+        "known_variables": "tas", 
         "cell_method": "time: mean within days"
       }
     ], 
@@ -2137,14 +1801,7 @@
     "input": [
       {
         "standard_name": "air_temperature", 
-        "known_variables": [
-          "tas", 
-          "tas-adjust", 
-          "tmean", 
-          "tm", 
-          "tg", 
-          "meant"
-        ], 
+        "known_variables": "tas", 
         "cell_method": "time: mean within days"
       }
     ], 
@@ -2162,7 +1819,7 @@
       }
     ], 
     "output": {
-      "reference": "_", 
+      "reference": "user", 
       "canonical_units": "Kelvin second", 
       "cell_method": "time: mean within days time: sum over days", 
       "long_name": "Degree Days (Tmean > #C)", 
@@ -2180,14 +1837,7 @@
     "input": [
       {
         "standard_name": "air_temperature", 
-        "known_variables": [
-          "tas", 
-          "tas-adjust", 
-          "tmean", 
-          "tm", 
-          "tg", 
-          "meant"
-        ], 
+        "known_variables": "tas", 
         "cell_method": "time: mean within days"
       }
     ], 
@@ -2223,14 +1873,7 @@
     "input": [
       {
         "standard_name": "air_temperature", 
-        "known_variables": [
-          "tas", 
-          "tas-adjust", 
-          "tmean", 
-          "tm", 
-          "tg", 
-          "meant"
-        ], 
+        "known_variables": "tas", 
         "cell_method": "time: mean within days"
       }
     ], 
@@ -2248,7 +1891,7 @@
       }
     ], 
     "output": {
-      "reference": "_", 
+      "reference": "user", 
       "canonical_units": "Kelvin second", 
       "cell_method": "time: mean within days time: sum over days", 
       "long_name": "Degree Days (Tmean < #C)", 
@@ -2266,14 +1909,7 @@
     "input": [
       {
         "standard_name": "air_temperature", 
-        "known_variables": [
-          "tas", 
-          "tas-adjust", 
-          "tmean", 
-          "tm", 
-          "tg", 
-          "meant"
-        ], 
+        "known_variables": "tas", 
         "cell_method": "time: mean within days"
       }
     ], 
