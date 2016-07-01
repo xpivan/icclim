@@ -136,7 +136,8 @@ def indice(in_files,
     '''
     # Load external variable meta data file
     var_metadata = metadata.VariableMetadata("metadata_database/climate_indices_DEF.json",
-                                             alt_names="metadata_database/alternative_variable_names.json")
+                                             alt_names="metadata_database/alternative_variable_names.json",
+                                             alt_methods="metadata_database/alternative_cell_methods.json")
     
     #######################################################
     ########## User indice check params
@@ -372,6 +373,10 @@ def indice(in_files,
 
     if not var_metadata.is_standard_name_consistent(VARS, indice_name):
         err_msg = "Invalid standard_name for variable " + v + " and indice " + indice_name + " according to the ICCLIM variable metadata file"
+        raise RuntimeError(err_msg)
+
+    if not var_metadata.is_cell_method_consistent(VARS, indice_name):
+        err_msg = "Invalid cell_method for variable " + v + " and indice " + indice_name + " according to the ICCLIM variable metadata file"
         raise RuntimeError(err_msg)
     
     #####    for each chunk
