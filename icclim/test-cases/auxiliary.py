@@ -8,9 +8,13 @@ import re
 import sys
 import types
 
-sys.path.append(os.getcwd())
+# Import differently depending on how test cases were launched
+if re.search('test-cases', os.getcwd()) is not None:
+    icclim_dir = re.search('(.*)test-cases', os.getcwd()).group(1)
+else:
+    icclim_dir = os.getcwd()
+sys.path.append(icclim_dir)
 import util.callback as callback
-
 
 def ConfigSectionMap(Config, section):
     dict1 = {}
