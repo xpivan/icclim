@@ -1,6 +1,7 @@
 import json
 import os
 import pdb
+import re
 
 from netCDF4 import Dataset
 
@@ -128,6 +129,10 @@ class VariableMetadata(object):
             ncVar = inc.variables[v]
             fcell_methods.append(ncVar.cell_methods)
 
+        # Remove any free text formulation in parenthesis
+        set_fc_methods = set([re.sub("\s*\(.*\)$", "", fc_method) for fc_method in fcell_methods])
+        fc_methods = list(set_fc_methods)
+
         ret_value = True
         curr_meta_dict = self.get_indice_dict(indice_name)
         for idx in range(int(curr_meta_dict['n_inputs'])):
@@ -135,13 +140,13 @@ class VariableMetadata(object):
             alternative_cmethods = self.get_alternative_cmethods(cell_methods)
 
             cell_methods = self.convert_to_lower_case_list(cell_methods)
-            union = set(alternative_cmethods) & set(fcell_methods)
+            union = set(alternative_cmethods) & set(fc_methods)
 
             if len(union) == 0:
                 ret_value = ret_value and False
             else:
                 # Remove the matched entry
-                del(fcell_methods[fcell_methods.index(list(union)[0])])
+                del(fc_methods[fc_methods.index(list(union)[0])])
 
         return ret_value
 
