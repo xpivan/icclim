@@ -10,7 +10,6 @@
 
 import numpy
 import logging
-import pdb
 import pkg_resources
 from netCDF4 import Dataset, MFDataset
 
