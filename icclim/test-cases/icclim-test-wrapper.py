@@ -55,7 +55,7 @@ for files in args.testfiles:
         files = [files]
     # Expand files if test dir given
     elif os.path.isdir(files):
-        files = [os.path.join(files, file) for file in sorted(os.listdir(files))]
+        files = [os.path.join(files, file) for file in sorted(os.listdir(files)) if re.search('~$', file) is None]
     else:
         raise ValueError('files is unexpected value: %s' % files)
 
@@ -104,4 +104,5 @@ for files in args.testfiles:
             # Run test
             if not args.list_only:
                 icclim.indice(**section_dict)
+            del(section_dict)
             logging.info("<====== " + section + "\n")
