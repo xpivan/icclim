@@ -5,22 +5,20 @@ Library    String
 
 
 *** Variable ***
-${RERUN_REFORMAT}     TRUE    # (TRUE|FALSE)
+${OUTPUT}    test-output-folder    # (any path)
+${INPUT}     input-test-data       # (input test data folder)
 
-# Useful arguments:
-# --variable RERUN_REFORMAT:FALSE
+# Optional arguments:
 # --test test-cases-360-days  # To include only this (these) test cases
-
-${default_input_folder}     input-test-data
-${default_output_folder}    tmp-out
-
+# --output OUTPUT:output-folder-name
+# --input INPUT:input-test-data-folder
 
 # Comments can be written like this
 
 *** Test Cases ***
 test-cases-360-days
     ${plot_name}        ${group1} =      Should Match Regexp     ${TEST_NAME}    test-cases-(.*)
-    ${handle} =         Run Process      test-cases/icclim-test-wrapper.py       -t    test-cases/${TEST_NAME}    -o     ${default_output_folder}    -i    ${default_input_folder}     stdout=stdout_${group1}.txt     stderr=stderr_${group1}.txt
+    ${handle} =         Run Process      test-cases/icclim-test-wrapper.py       -t    test-cases/${TEST_NAME}    -o     ${OUTPUT}    -i    ${INPUT}     stdout=stdout_${group1}.txt     stderr=stderr_${group1}.txt
     Should Be Equal As Integers          ${handle.rc}    0
 
 #-#
