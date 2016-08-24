@@ -1,0 +1,52 @@
+*** Settings ***
+Library    OperatingSystem
+Library    Process
+Library    String
+Resource   ../default_variables.txt
+
+*** Variable ***
+${TEST_CATEGORY}    metadata
+
+# Optional arguments:
+# --test metadata-01-fd.tst   # To include only this test case
+# --variable OUTPUT:output-folder-name
+# --variable INPUT:input-test-data-folder
+
+# Comments can be written like this
+
+*** Test Cases ***
+metadata-01-fd.tst
+    ${handle} =         Run Process      test-cases/icclim-test-wrapper.py       -t    test-cases/test-cases-metadata/metadata-01-fd.tst    -o     ${OUTPUT}    -i    ${INPUT}     stdout=stdout_${TEST_CATEGORY}_${TEST_NAME}.txt    stderr=stderr_${TEST_CATEGORY}_${TEST_NAME}.txt
+    Should Be Equal As Integers          ${handle.rc}    0
+
+metadata-02-su.tst
+    ${handle} =         Run Process      test-cases/icclim-test-wrapper.py       -t    test-cases/test-cases-metadata/metadata-02-su.tst    -o     ${OUTPUT}    -i    ${INPUT}     stdout=stdout_${TEST_CATEGORY}_${TEST_NAME}.txt    stderr=stderr_${TEST_CATEGORY}_${TEST_NAME}.txt
+    Should Be Equal As Integers          ${handle.rc}    0
+
+metadata-03-id.tst
+    ${handle} =         Run Process      test-cases/icclim-test-wrapper.py       -t    test-cases/test-cases-metadata/metadata-03-id.tst    -o     ${OUTPUT}    -i    ${INPUT}     stdout=stdout_${TEST_CATEGORY}_${TEST_NAME}.txt    stderr=stderr_${TEST_CATEGORY}_${TEST_NAME}.txt
+    Should Be Equal As Integers          ${handle.rc}    0
+
+metadata-04-tr.tst
+    ${handle} =         Run Process      test-cases/icclim-test-wrapper.py       -t    test-cases/test-cases-metadata/metadata-04-tr.tst    -o     ${OUTPUT}    -i    ${INPUT}     stdout=stdout_${TEST_CATEGORY}_${TEST_NAME}.txt    stderr=stderr_${TEST_CATEGORY}_${TEST_NAME}.txt
+    Should Be Equal As Integers          ${handle.rc}    0
+
+metadata-05-txx.tst
+    ${handle} =         Run Process      test-cases/icclim-test-wrapper.py       -t    test-cases/test-cases-metadata/metadata-05-txx.tst    -o     ${OUTPUT}    -i    ${INPUT}     stdout=stdout_${TEST_CATEGORY}_${TEST_NAME}.txt    stderr=stderr_${TEST_CATEGORY}_${TEST_NAME}.txt
+    Should Be Equal As Integers          ${handle.rc}    0
+
+metadata-06-tnx.tst
+    ${handle} =         Run Process      test-cases/icclim-test-wrapper.py       -t    test-cases/test-cases-metadata/metadata-06-tnx.tst    -o     ${OUTPUT}    -i    ${INPUT}     stdout=stdout_${TEST_CATEGORY}_${TEST_NAME}.txt    stderr=stderr_${TEST_CATEGORY}_${TEST_NAME}.txt
+    Should Be Equal As Integers          ${handle.rc}    0
+
+metadata-07-tnn.tst
+    ${handle} =         Run Process      test-cases/icclim-test-wrapper.py       -t    test-cases/test-cases-metadata/metadata-07-tnn.tst    -o     ${OUTPUT}    -i    ${INPUT}     stdout=stdout_${TEST_CATEGORY}_${TEST_NAME}.txt    stderr=stderr_${TEST_CATEGORY}_${TEST_NAME}.txt
+    Should Be Equal As Integers          ${handle.rc}    0
+
+metadata-08-dtr.tst
+    ${handle} =         Run Process      test-cases/icclim-test-wrapper.py       -t    test-cases/test-cases-metadata/metadata-08-dtr.tst    -o     ${OUTPUT}    -i    ${INPUT}     stdout=stdout_${TEST_CATEGORY}_${TEST_NAME}.txt    stderr=stderr_${TEST_CATEGORY}_${TEST_NAME}.txt
+    Should Be Equal As Integers          ${handle.rc}    0
+
+metadata-09-txn.tst
+    ${handle} =         Run Process      test-cases/icclim-test-wrapper.py       -t    test-cases/test-cases-metadata/metadata-09-txn.tst    -o     ${OUTPUT}    -i    ${INPUT}     stdout=stdout_${TEST_CATEGORY}_${TEST_NAME}.txt    stderr=stderr_${TEST_CATEGORY}_${TEST_NAME}.txt
+    Should Be Equal As Integers          ${handle.rc}    1
