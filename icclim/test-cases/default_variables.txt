@@ -1,0 +1,6 @@
+*** Settings ***
+Documentation     An example resource file
+
+*** Variables ***
+${OUTPUT}         test-output-folder
+${INPUT}          input-test-data

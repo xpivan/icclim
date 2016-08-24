@@ -1,0 +1,92 @@
+*** Settings ***
+Library    OperatingSystem
+Library    Process
+Library    String
+Resource   ../default_variables.txt
+
+*** Variable ***
+${TEST_CATEGORY}    read-the-docs
+
+# Optional arguments:
+# --test read-the-docs-example-01-360-day.tst   # To include only this test case
+# --variable OUTPUT:output-folder-name
+# --variable INPUT:input-test-data-folder
+
+# Comments can be written like this
+
+*** Test Cases ***
+read-the-docs-example-01.tst
+    ${handle} =         Run Process      test-cases/icclim-test-wrapper.py       -t    test-cases/test-cases-read-the-docs/read-the-docs-example-01.tst    -i    ${INPUT}    -o    ${OUTPUT}    stdout=stdout_${TEST_CATEGORY}_${TEST_NAME}.txt    stderr=stderr_${TEST_CATEGORY}_${TEST_NAME}.txt
+    Should Be Equal As Integers          ${handle.rc}    0
+
+read-the-docs-example-01-different-slice.tst
+    ${handle} =         Run Process      test-cases/icclim-test-wrapper.py       -t    test-cases/test-cases-read-the-docs/read-the-docs-example-01-different-slice.tst    -i    ${INPUT}    -o    ${OUTPUT}    stdout=stdout_${TEST_CATEGORY}_${TEST_NAME}.txt    stderr=stderr_${TEST_CATEGORY}_${TEST_NAME}.txt
+    Should Be Equal As Integers          ${handle.rc}    0
+
+read-the-docs-example-01-different-slice_year.tst
+    ${handle} =         Run Process      test-cases/icclim-test-wrapper.py       -t    test-cases/test-cases-read-the-docs/read-the-docs-example-01-different-slice_year.tst    -i    ${INPUT}    -o    ${OUTPUT}    stdout=stdout_${TEST_CATEGORY}_${TEST_NAME}.txt    stderr=stderr_${TEST_CATEGORY}_${TEST_NAME}.txt
+    Should Be Equal As Integers          ${handle.rc}    0
+
+read-the-docs-example-02.tst
+    ${handle} =         Run Process      test-cases/icclim-test-wrapper.py       -t    test-cases/test-cases-read-the-docs/read-the-docs-example-02.tst    -i    ${INPUT}    -o    ${OUTPUT}    stdout=stdout_${TEST_CATEGORY}_${TEST_NAME}.txt    stderr=stderr_${TEST_CATEGORY}_${TEST_NAME}.txt
+    Should Be Equal As Integers          ${handle.rc}    0
+
+read-the-docs-example-03.tst
+    ${handle} =         Run Process      test-cases/icclim-test-wrapper.py       -t    test-cases/test-cases-read-the-docs/read-the-docs-example-03.tst    -i    ${INPUT}    -o    ${OUTPUT}    stdout=stdout_${TEST_CATEGORY}_${TEST_NAME}.txt    stderr=stderr_${TEST_CATEGORY}_${TEST_NAME}.txt
+    Should Be Equal As Integers          ${handle.rc}    0
+
+read-the-docs-example-05.tst
+    ${handle} =         Run Process      test-cases/icclim-test-wrapper.py       -t    test-cases/test-cases-read-the-docs/read-the-docs-example-05.tst    -i    ${INPUT}    -o    ${OUTPUT}    stdout=stdout_${TEST_CATEGORY}_${TEST_NAME}.txt    stderr=stderr_${TEST_CATEGORY}_${TEST_NAME}.txt
+    Should Be Equal As Integers          ${handle.rc}    0
+
+read-the-docs-example-06.tst
+    ${handle} =         Run Process      test-cases/icclim-test-wrapper.py       -t    test-cases/test-cases-read-the-docs/read-the-docs-example-06.tst    -i    ${INPUT}    -o    ${OUTPUT}    stdout=stdout_${TEST_CATEGORY}_${TEST_NAME}.txt    stderr=stderr_${TEST_CATEGORY}_${TEST_NAME}.txt
+    Should Be Equal As Integers          ${handle.rc}    0
+
+read-the-docs-example-07.tst
+    ${handle} =         Run Process      test-cases/icclim-test-wrapper.py       -t    test-cases/test-cases-read-the-docs/read-the-docs-example-07.tst    -i    ${INPUT}    -o    ${OUTPUT}    stdout=stdout_${TEST_CATEGORY}_${TEST_NAME}.txt    stderr=stderr_${TEST_CATEGORY}_${TEST_NAME}.txt
+    Should Be Equal As Integers          ${handle.rc}    0
+
+read-the-docs-example-08.tst
+    ${handle} =         Run Process      test-cases/icclim-test-wrapper.py       -t    test-cases/test-cases-read-the-docs/read-the-docs-example-08.tst    -i    ${INPUT}    -o    ${OUTPUT}    stdout=stdout_${TEST_CATEGORY}_${TEST_NAME}.txt    stderr=stderr_${TEST_CATEGORY}_${TEST_NAME}.txt
+    Should Be Equal As Integers          ${handle.rc}    0
+
+read-the-docs-example-09.tst
+    ${handle} =         Run Process      test-cases/icclim-test-wrapper.py       -t    test-cases/test-cases-read-the-docs/read-the-docs-example-09.tst    -i    ${INPUT}    -o    ${OUTPUT}    stdout=stdout_${TEST_CATEGORY}_${TEST_NAME}.txt    stderr=stderr_${TEST_CATEGORY}_${TEST_NAME}.txt
+    Should Be Equal As Integers          ${handle.rc}    0
+
+read-the-docs-example-10.tst
+    ${handle} =         Run Process      test-cases/icclim-test-wrapper.py       -t    test-cases/test-cases-read-the-docs/read-the-docs-example-10.tst    -i    ${INPUT}    -o    ${OUTPUT}    stdout=stdout_${TEST_CATEGORY}_${TEST_NAME}.txt    stderr=stderr_${TEST_CATEGORY}_${TEST_NAME}.txt
+    Should Be Equal As Integers          ${handle.rc}    0
+
+read-the-docs-example-11.tst
+    ${handle} =         Run Process      test-cases/icclim-test-wrapper.py       -t    test-cases/test-cases-read-the-docs/read-the-docs-example-11.tst    -i    ${INPUT}    -o    ${OUTPUT}    stdout=stdout_${TEST_CATEGORY}_${TEST_NAME}.txt    stderr=stderr_${TEST_CATEGORY}_${TEST_NAME}.txt
+    Should Be Equal As Integers          ${handle.rc}    0
+
+read-the-docs-example-12.tst
+    ${handle} =         Run Process      test-cases/icclim-test-wrapper.py       -t    test-cases/test-cases-read-the-docs/read-the-docs-example-12.tst    -i    ${INPUT}    -o    ${OUTPUT}    stdout=stdout_${TEST_CATEGORY}_${TEST_NAME}.txt    stderr=stderr_${TEST_CATEGORY}_${TEST_NAME}.txt
+    Should Be Equal As Integers          ${handle.rc}    0
+
+read-the-docs-example-13.tst
+    ${handle} =         Run Process      test-cases/icclim-test-wrapper.py       -t    test-cases/test-cases-read-the-docs/read-the-docs-example-13.tst    -i    ${INPUT}    -o    ${OUTPUT}    stdout=stdout_${TEST_CATEGORY}_${TEST_NAME}.txt    stderr=stderr_${TEST_CATEGORY}_${TEST_NAME}.txt
+    Should Be Equal As Integers          ${handle.rc}    0
+
+read-the-docs-example-14.tst
+    ${handle} =         Run Process      test-cases/icclim-test-wrapper.py       -t    test-cases/test-cases-read-the-docs/read-the-docs-example-14.tst    -i    ${INPUT}    -o    ${OUTPUT}    stdout=stdout_${TEST_CATEGORY}_${TEST_NAME}.txt    stderr=stderr_${TEST_CATEGORY}_${TEST_NAME}.txt
+    Should Be Equal As Integers          ${handle.rc}    0
+
+read-the-docs-example-15.tst
+    ${handle} =         Run Process      test-cases/icclim-test-wrapper.py       -t    test-cases/test-cases-read-the-docs/read-the-docs-example-15.tst    -i    ${INPUT}    -o    ${OUTPUT}    stdout=stdout_${TEST_CATEGORY}_${TEST_NAME}.txt    stderr=stderr_${TEST_CATEGORY}_${TEST_NAME}.txt
+    Should Be Equal As Integers          ${handle.rc}    0
+
+read-the-docs-example-16.tst
+    ${handle} =         Run Process      test-cases/icclim-test-wrapper.py       -t    test-cases/test-cases-read-the-docs/read-the-docs-example-16.tst    -i    ${INPUT}    -o    ${OUTPUT}    stdout=stdout_${TEST_CATEGORY}_${TEST_NAME}.txt    stderr=stderr_${TEST_CATEGORY}_${TEST_NAME}.txt
+    Should Be Equal As Integers          ${handle.rc}    0
+
+read-the-docs-example-17.tst
+    ${handle} =         Run Process      test-cases/icclim-test-wrapper.py       -t    test-cases/test-cases-read-the-docs/read-the-docs-example-17.tst    -i    ${INPUT}    -o    ${OUTPUT}    stdout=stdout_${TEST_CATEGORY}_${TEST_NAME}.txt    stderr=stderr_${TEST_CATEGORY}_${TEST_NAME}.txt
+    Should Be Equal As Integers          ${handle.rc}    0
+
+read-the-docs-example-18.tst
+    ${handle} =         Run Process      test-cases/icclim-test-wrapper.py       -t    test-cases/test-cases-read-the-docs/read-the-docs-example-18.tst    -i    ${INPUT}    -o    ${OUTPUT}    stdout=stdout_${TEST_CATEGORY}_${TEST_NAME}.txt    stderr=stderr_${TEST_CATEGORY}_${TEST_NAME}.txt
+    Should Be Equal As Integers          ${handle.rc}    0

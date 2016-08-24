@@ -1,0 +1,36 @@
+*** Settings ***
+Library    OperatingSystem
+Library    Process
+Library    String
+Resource   ../default_variables.txt
+
+*** Variable ***
+${TEST_CATEGORY}    opendap
+
+# Optional arguments:
+# --test su-index-01.tst  # To include only this test case
+# --variable OUTPUT:output-folder-name
+# --variable INPUT:input-test-data-folder
+
+# Comments can be written like this
+
+*** Test Cases ***
+su-index-01.tst
+    ${handle} =         Run Process      test-cases/icclim-test-wrapper.py       -t    test-cases/test-cases-opendap/su-index-01.tst    -o     ${OUTPUT}         stdout=stdout_${TEST_CATEGORY}_${TEST_NAME}.txt     stderr=stderr_${TEST_CATEGORY}_${TEST_NAME}.txt
+    Should Be Equal As Integers          ${handle.rc}    0
+
+dtr-index-02.tst
+    ${handle} =         Run Process      test-cases/icclim-test-wrapper.py       -t    test-cases/test-cases-opendap/dtr-index-02.tst    -o     ${OUTPUT}         stdout=stdout_${TEST_CATEGORY}_${TEST_NAME}.txt     stderr=stderr_${TEST_CATEGORY}_${TEST_NAME}.txt
+    Should Be Equal As Integers          ${handle.rc}    0
+
+dtr-index-03.tst
+    ${handle} =         Run Process      test-cases/icclim-test-wrapper.py       -t    test-cases/test-cases-opendap/dtr-index-03.tst    -o     ${OUTPUT}         stdout=stdout_${TEST_CATEGORY}_${TEST_NAME}.txt     stderr=stderr_${TEST_CATEGORY}_${TEST_NAME}.txt
+    Should Be Equal As Integers          ${handle.rc}    0
+
+tx90p-index-04.tst
+    ${handle} =         Run Process      test-cases/icclim-test-wrapper.py       -t    test-cases/test-cases-opendap/tx90p-index-04.tst    -o     ${OUTPUT}         stdout=stdout_${TEST_CATEGORY}_${TEST_NAME}.txt     stderr=stderr_${TEST_CATEGORY}_${TEST_NAME}.txt
+    Should Be Equal As Integers          ${handle.rc}    0
+
+tx95t-index-05.tst
+    ${handle} =         Run Process      test-cases/icclim-test-wrapper.py       -t    test-cases/test-cases-opendap/tx95t-index-05.tst    -o     ${OUTPUT}         stdout=stdout_${TEST_CATEGORY}_${TEST_NAME}.txt     stderr=stderr_${TEST_CATEGORY}_${TEST_NAME}.txt
+    Should Be Equal As Integers          ${handle.rc}    0
