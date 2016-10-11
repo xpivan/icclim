@@ -72,3 +72,9 @@ target/
 
 # ESMPy
 PET0.ESMF_LogFile
+
+# Robot Framework
+stderr_*
+stdout_*
+log.html
+report.html

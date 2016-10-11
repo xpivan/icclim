@@ -1,4 +1,5 @@
 import json
+import logging
 import os
 import pdb
 import re
@@ -10,7 +11,7 @@ class VariableMetadata(object):
     Class to handle required variable meta data
 
     '''
-    def __init__(self, metadata_file, alt_names, alt_methods):
+    def __init__(self, metadata_file, alt_names, alt_methods, alt_standard_names, check_metadata):
         '''
         Initialize (read and parse) variable meta data json-file
 
@@ -20,16 +21,37 @@ class VariableMetadata(object):
         type metadata_file: string
         param alt_methods: path to json file with alternative variable cell_methods
         type metadata_file: string
+        param alt_standard_names: path to json file with alternative standard names
+        type metadata_file: string
+        param check_metadata: check metadata against external files
+        type metadata_file: bool
 
         '''
         fmeta = open(metadata_file)
         self.jparsed = json.load(fmeta)
 
         falt_names = open(alt_names)
-        self.jalt_names = json.load(falt_names)
+        self.jalt_variable_names = json.load(falt_names)
 
         falt_methods = open(alt_methods)
-        self.jalt_methods = json.load(falt_methods)
+        self.jalt_cell_methods = json.load(falt_methods)
+
+        falt_standard_names = open(alt_standard_names)
+        self.jalt_standard_names = json.load(falt_standard_names)
+
+        # Check meta data by default
+        self.run_metadata_check = check_metadata
+
+    def set_metadata_check(self, check):
+        '''
+        Handle meta data as user defined indices should be handled
+
+        param check: Bool whether to check metadata against metadata file or not
+        type metadata_file: bool
+
+        rtype None
+        '''
+        self.run_metadata_check = check
 
     def get_indice_dict(self, indice_name):
         '''
@@ -84,31 +106,28 @@ class VariableMetadata(object):
         '''
         self.current_variable_metadata = self.get_indice_dict(indice_to_select)
 
-    def get_alternative_names(self, known_variable):
+    def get_alternative_names(self, known_variable, alt_name_dict):
         '''
         Fetches valid alternative variable names according to
         ICCLIM variable meta data file.
 
         param known_variable: Default name for input variable for this index
         type known_variable: string
+        param alt_name_dict: Dictionary listing the alternative names
+        type known_variable: dict
 
         rtype list
 
         '''
-        return self.jalt_names['input']['known_variables'][known_variable]
+        known_variables = alt_name_dict['input']['alternative_names']
+        matching_list = [vname for vname in known_variables if known_variable in vname]
+        flatten_list = [val for sublist in matching_list for val in sublist]
+        if len(flatten_list) > 0:
+            ret_val = flatten_list
+        else:
+            ret_val = [known_variable]
 
-    def get_alternative_cmethods(self, known_method):
-        '''
-        Fetches valid alternative cell_methods according to
-        ICCLIM variable meta data file.
-
-        param known_method: Default name for input cell_method for this index
-        type known_method: string
-
-        rtype list
-
-        '''
-        return self.jalt_methods['input']['known_methods'][known_method]
+        return ret_val
 
     def is_cell_method_consistent(self, VARS, indice_name):
         '''
@@ -124,29 +143,35 @@ class VariableMetadata(object):
 
         '''
         fcell_methods = []
+        ret_value = True
+
         for v in VARS.keys():
             inc = Dataset(VARS[v]['files_years'].keys()[0], 'r')
             ncVar = inc.variables[v]
-            fcell_methods.append(ncVar.cell_methods)
-
-        # Remove any free text formulation in parenthesis
-        set_fc_methods = set([re.sub("\s*\(.*\)$", "", fc_method) for fc_method in fcell_methods])
-        fc_methods = list(set_fc_methods)
-
-        ret_value = True
-        curr_meta_dict = self.get_indice_dict(indice_name)
-        for idx in range(int(curr_meta_dict['n_inputs'])):
-            cell_methods = curr_meta_dict['input'][idx]['cell_methods']
-            alternative_cmethods = self.get_alternative_cmethods(cell_methods)
-
-            cell_methods = self.convert_to_lower_case_list(cell_methods)
-            union = set(alternative_cmethods) & set(fc_methods)
-
-            if len(union) == 0:
+            try:
+                fcell_methods.append(ncVar.cell_methods)
+            except AttributeError:
+                logging.critical("Error: couldn't access attribute 'cell_methods' for variable: %s", v)
                 ret_value = ret_value and False
-            else:
-                # Remove the matched entry
-                del(fc_methods[fc_methods.index(list(union)[0])])
+
+        if ret_value:  # if cell_methods found, check validity
+            # Remove any free text formulation in parenthesis
+            set_fc_methods = set([re.sub("\s*\(.*\)$", "", fc_method) for fc_method in fcell_methods])
+            fc_methods = list(set_fc_methods)
+
+            curr_meta_dict = self.get_indice_dict(indice_name)
+            for idx in range(int(curr_meta_dict['n_inputs'])):
+                cell_method = curr_meta_dict['input'][idx]['cell_methods']
+                alternative_cmethods = self.get_alternative_names(cell_method,
+                                                                  self.jalt_cell_methods)
+
+                union = set(alternative_cmethods) & set(fc_methods)
+
+                if len(union) == 0:
+                    ret_value = ret_value and False
+                else:
+                    # Remove the matched entry
+                    del(fc_methods[fc_methods.index(list(union)[0])])
 
         return ret_value
 
@@ -165,22 +190,33 @@ class VariableMetadata(object):
 
         '''
         fstandard_names = []
+        is_consistent = True
+
         for v in VARS.keys():
             inc = Dataset(VARS[v]['files_years'].keys()[0], 'r')
             ncVar = inc.variables[v]
-            fstandard_names.append(ncVar.standard_name)
+            try:
+                fstandard_names.append(ncVar.standard_name)
+            except AttributeError:
+                logging.critical("Error: couldn't access attribute 'standard_name' for variable: %s", v)
+                is_consistent = is_consistent and False
 
-        ret_value = True
-        curr_meta_dict = self.get_indice_dict(indice_name)
-        for idx in range(int(curr_meta_dict['n_inputs'])):
-            jstandard_name = curr_meta_dict['input'][idx]['standard_name']
-            if not jstandard_name in fstandard_names:
-                ret_value = ret_value and False
-            else:
-                # Remove the matched entry
-                del(fstandard_names[fstandard_names.index(jstandard_name)])
+        if is_consistent:  # if standard_name found, check validity
+            curr_meta_dict = self.get_indice_dict(indice_name)
+            for idx in range(int(curr_meta_dict['n_inputs'])):
+                jstandard_name = curr_meta_dict['input'][idx]['standard_name']
+                alternative_standard_names = self.get_alternative_names(jstandard_name,
+                                                                        self.jalt_standard_names)
+                union = set(alternative_standard_names) & set(fstandard_names)
 
-        return ret_value
+                if len(union) == 0:
+                    is_consistent = is_consistent and False
+                else:
+                    # Remove the matched entry
+                    entry = list(union)[0]
+                    del(fstandard_names[fstandard_names.index(entry)])
+
+        return is_consistent
 
     def is_varname_consistent(self, var_name, indice_name):
         '''
@@ -195,19 +231,19 @@ class VariableMetadata(object):
         rtype bool
 
         '''
-        ret_value = True
+        is_consistent = True
         curr_meta_dict = self.get_indice_dict(indice_name)
         for idx in range(int(curr_meta_dict['n_inputs'])):
             known_variable = curr_meta_dict['input'][idx]['known_variables']
-            alternative_names = self.get_alternative_names(known_variable)
-
+            alternative_variable_names = self.get_alternative_names(known_variable,
+                                                                   self.jalt_variable_names)
             var_name = self.convert_to_lower_case_list(var_name)
-            union = set(alternative_names) & set(var_name)
+            union = set(alternative_variable_names) & set(var_name)
 
             if len(union) == 0:
-                ret_value = ret_value and False
+                is_consistent = is_consistent and False
 
-        return ret_value
+        return is_consistent
 
     def convert_to_lower_case_list(self, invar):
         '''

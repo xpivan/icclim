@@ -1,0 +1,7 @@
+{
+    "input" : {
+        "alternative_names" : [
+            [ "precipitation_flux", "lwe_precipitation_rate", "lwe_thickness_of_precipitation_amount", "precipitation_amount" ]
+        ]
+    }
+}

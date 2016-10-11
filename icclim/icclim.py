@@ -147,7 +147,9 @@ def indice(in_files,
     # Load external variable meta data file
     var_metadata = metadata.VariableMetadata("metadata_database/climate_indices_DEF.json",
                                              alt_names="metadata_database/alternative_variable_names.json",
-                                             alt_methods="metadata_database/alternative_cell_methods.json")
+                                             alt_methods="metadata_database/alternative_cell_methods.json",
+                                             alt_standard_names="metadata_database/alternative_standard_names.json",
+                                             check_metadata=True)
     
     logging.info("   ********************************************************************************************")
     logging.info("   *                                                                                          *")
@@ -179,15 +181,17 @@ def indice(in_files,
             
             user_indice = ui.get_user_indice_params(user_indice, var_name, out_unit)
             indice_type = user_indice['type']
+            var_metadata.set_metadata_check(False)
                             
     ########## User indice check end
     #######################################################            
 
     else:
         # Check input data meta data consistency
-        if not var_metadata.is_varname_consistent(var_name, indice_name):
-            err_msg = "Invalid var_name for indice " + indice_name + " according to the ICCLIM variable metadata file"
-            raise RuntimeError(err_msg)
+        if var_metadata.run_metadata_check:
+            if not var_metadata.is_varname_consistent(var_name, indice_name):
+                err_msg = "Invalid var_name for indice " + indice_name + " according to the ICCLIM variable metadata file"
+                raise RuntimeError(err_msg)
 
         # Get the indice type
         indice_type = get_key_by_value_from_dict(maps.map_indice_type, indice_name) # 'simple'/'multivariable'/'percentile_based'/'percentile_based_multivariable'
@@ -402,13 +406,18 @@ def indice(in_files,
     global chunk_counter
     chunk_counter = 0
 
-    if not var_metadata.is_standard_name_consistent(VARS, indice_name):
-        err_msg = "Invalid standard_name for variable " + v + " and indice " + indice_name + " according to the ICCLIM variable metadata file"
-        raise RuntimeError(err_msg)
+    if var_metadata.run_metadata_check:
+        if not var_metadata.is_standard_name_consistent(VARS, indice_name):
+            err_msg = "'standard_name' not found or invalid 'standard_name' for variable '" \
+                    + v + "' and indice '" + indice_name \
+                    + "' according to the ICCLIM variable metadata file"
+            raise RuntimeError(err_msg)
 
-    if not var_metadata.is_cell_method_consistent(VARS, indice_name):
-        err_msg = "Invalid cell_method for variable " + v + " and indice " + indice_name + " according to the ICCLIM variable metadata file"
-        raise RuntimeError(err_msg)
+        if not var_metadata.is_cell_method_consistent(VARS, indice_name):
+            err_msg = "'cell_method' not found or invalid 'cell_method' for variable '" \
+                    + v + "' and indice '" + indice_name \
+                    + "' according to the ICCLIM variable metadata file"
+            raise RuntimeError(err_msg)
     
     #####    for each chunk
     for tile_id in tile_map:

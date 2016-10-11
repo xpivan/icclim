@@ -16,13 +16,13 @@ ${TEST_CATEGORY}    360-days
 
 *** Test Cases ***
 read-the-docs-example-01-360-day.tst
-    ${handle} =         Run Process      test-cases/icclim-test-wrapper.py       -t    test-cases/test-cases-360-days/read-the-docs-example-01-360-day.tst    -i    ${INPUT}    -o    ${OUTPUT}    stdout=stdout_${TEST_CATEGORY}_${TEST_NAME}.txt    stderr=stderr_${TEST_CATEGORY}_${TEST_NAME}.txt
+    ${handle} =         Run Process      test-cases/icclim-test-wrapper.py       -t    test-cases/test-cases-360-days/${TEST_NAME}    -i    ${INPUT}    -o    ${OUTPUT}    stdout=stdout_${TEST_CATEGORY}_${TEST_NAME}.txt    stderr=stderr_${TEST_CATEGORY}_${TEST_NAME}.txt
     Should Be Equal As Integers          ${handle.rc}    0
 
 read-the-docs-example-02-360-day.tst
-    ${handle} =         Run Process      test-cases/icclim-test-wrapper.py       -t    test-cases/test-cases-360-days/read-the-docs-example-02-360-day.tst    -i    ${INPUT}    -o    ${OUTPUT}    stdout=stdout_${TEST_CATEGORY}_${TEST_NAME}.txt    stderr=stderr_${TEST_CATEGORY}_${TEST_NAME}.txt
+    ${handle} =         Run Process      test-cases/icclim-test-wrapper.py       -t    test-cases/test-cases-360-days/${TEST_NAME}    -i    ${INPUT}    -o    ${OUTPUT}    stdout=stdout_${TEST_CATEGORY}_${TEST_NAME}.txt    stderr=stderr_${TEST_CATEGORY}_${TEST_NAME}.txt
     Should Be Equal As Integers          ${handle.rc}    0
 
 03-360-day.tst
-    ${handle} =         Run Process      test-cases/icclim-test-wrapper.py       -t    test-cases/test-cases-360-days/03-360-day.tst    -i    ${INPUT}    -o    ${OUTPUT}    stdout=stdout_${TEST_CATEGORY}_${TEST_NAME}.txt    stderr=stderr_${TEST_CATEGORY}_${TEST_NAME}.txt
+    ${handle} =         Run Process      test-cases/icclim-test-wrapper.py       -t    test-cases/test-cases-360-days/${TEST_NAME}    -i    ${INPUT}    -o    ${OUTPUT}    stdout=stdout_${TEST_CATEGORY}_${TEST_NAME}.txt    stderr=stderr_${TEST_CATEGORY}_${TEST_NAME}.txt
     Should Be Equal As Integers          ${handle.rc}    0
