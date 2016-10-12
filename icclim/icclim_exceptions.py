@@ -19,7 +19,17 @@ class MissingIcclimInputError(IcclimError):
     """ Exceptions raised erreonous input arguments.
 
     Attributes:
-        expr -- input expression in which the error occurred
+        msg  -- explanation of the error
+    """
+    def __init__(self, msg):
+        self.msg = msg
+    def __str__(self):
+        return repr(self.msg)
+
+class MissingIcclimAttributeError(IcclimError):
+    """ Exceptions raised erreonous input arguments.
+
+    Attributes:
         msg  -- explanation of the error
     """
     def __init__(self, msg):

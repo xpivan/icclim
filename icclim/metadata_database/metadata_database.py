@@ -42,6 +42,20 @@ class VariableMetadata(object):
         # Check meta data by default
         self.run_metadata_check = check_metadata
 
+    def check_for_attribute(self, ncVar, expected_attributes):
+        '''
+        Check that expcted attributes are available on ncVar
+
+        param ncVar: file handle
+        type ncVar: netCDF4.Variable
+        param expected_attributes: list with expected attributes
+        type expected_attributes: list
+
+        rtype list of bools
+        '''
+        return [hasattr(ncVar, i) for i in expected_attributes]
+
+
     def set_metadata_check(self, check):
         '''
         Handle meta data as user defined indices should be handled
@@ -322,3 +336,18 @@ class GlobalMetadata(object):
             if 'ATTR_VALUE' in self.jparsed['global'][attribute]:
                 if len(self.jparsed['global'][attribute]['ATTR_VALUE'].strip()) > 0:
                     out_nc.setncattr(attribute, self.jparsed['global'][attribute]['ATTR_VALUE'])
+
+def check_that_attributes_exists(ncVar, expected_attributes):
+        '''
+        Check and list missing attributes of netCDF variable
+
+        param ncVar: Netcdf output file handle
+        param type: type 'netCDF4._netCDF4.Dataset
+        param expected_attributes: Attributes expected to exist on ncVar
+        param type: list of strings
+        '''
+        attribute_matches = [hasattr(ncVar, i) for i in expected_attributes]
+        missing_attrs_index = [i for i, x in enumerate(attribute_matches) if not x]
+        missing_attrs_str = ", ".join([expected_attributes[i] for i in missing_attrs_index])
+        logging.critical("Error: Expected variable attribute " + missing_attrs_str + " missing")
+        return missing_attrs_str

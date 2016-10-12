@@ -259,6 +259,14 @@ def indice(in_files,
     indice_dim = util_nc.copy_var_dim(inc, onc, var_name[0]) # tuple ('time', 'lat', 'lon')    
     indice_dim = list(indice_dim)
     ncVar = inc.variables[var_name[0]] 
+
+    # Check for expected variable attributes
+    expected_attributes = ["_FillValue"]
+    missing_attrs_string = metadata.check_that_attributes_exists(ncVar, expected_attributes)
+    if var_metadata.run_metadata_check:
+        if len(missing_attrs_string) > 0:
+            raise MissingIcclimAttributeError("Missing variable attributes " + missing_attrs_string)
+
     fill_val = ncVar._FillValue.astype('float32') # fill_value must be the same type as "ind_type", i.e. 'float32'
     dimensions_list_var = ncVar.dimensions
     index_time = 0
