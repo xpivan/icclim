@@ -7,7 +7,7 @@
 
 import numpy
 
-from .util import calc as calc
+from .util import calc
 
 
 '''
@@ -254,7 +254,7 @@ def DTR_calculation(arr1, arr2, fill_val1=None, fill_val2=None):
     DTR = range_.mean(axis=0)                                       # masked array with new fill_value
     numpy.ma.set_fill_value(DTR, arr1_masked.fill_value)            # we set a fill_value = fill_value of arr1_masked (or arr2_masked) 
     
-    if not isinstance(arr1, numpy.ma.MaskedArray) :     # or if not isinstance(arr2, numpy.ma.MaskedArray) [because the both input arrays are the same type]
+    if not isinstance(arr1, numpy.ma.MaskedArray) :     #Â or if not isinstance(arr2, numpy.ma.MaskedArray) [because the both input arrays are the same type]
         DTR = DTR.filled(fill_value=arr1_masked.fill_value)      
     
     return DTR    
