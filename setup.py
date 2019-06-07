@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
  
-from setuptools import setup, find_packages, Command
 from distutils.core import Extension
 
 # notez qu'on import la lib
@@ -18,6 +17,12 @@ module1 = Extension('./icclim/libC',
                 library_dirs = ['/usr/local/lib'],
                 sources = ['./icclim/libC.c'])
 
+setup (name = 'PackageName',
+       version = '1.0',
+       description = 'This is a demo package',
+       ext_modules = [module1])
+
+from setuptools import setup, find_packages, Command
 setup(
  
     # le nom de votre bibliotheque, tel qu'il apparaitre sur pypi
