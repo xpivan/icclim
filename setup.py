@@ -12,6 +12,8 @@ import os
 from icclim import __version__
 
 module1 = Extension('libC',
+                define_macros = [('MAJOR_VERSION', '1'),
+                                    ('MINOR_VERSION', '0')],
                 include_dirs = ['/usr/local/include'],
                 library_dirs = ['/usr/local/lib'],
                 sources = ['./icclim/libC.c'])
