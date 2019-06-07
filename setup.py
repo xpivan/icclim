@@ -12,6 +12,9 @@ import os
 from icclim import __version__
 
 module1 = Extension('libC',
+                include_dirs = ['/usr/local/include'],
+                libraries = ['tcl83'],
+                library_dirs = ['/usr/local/lib'],
                 sources = ['./icclim/libC.c'])
 
 setup(
