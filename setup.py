@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
  
-from distutils.core import Extension
+from distutils.core import setup, Extension
 
 # notez qu'on import la lib
 # donc assurez-vous que l'importe n'a pas d'effet de bord
