@@ -12,6 +12,9 @@ from icclim import __version__
 
 from setuptools import setup, Extension, find_packages, Command
 
+
+
+from setuptools import find_packages, Command
 setup(
  
     # le nom de votre bibliotheque, tel qu'il apparaitre sur pypi
