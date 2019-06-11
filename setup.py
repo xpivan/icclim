@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
  
-from setuptools import setup, find_packages, Command
-from distutils.core import Extension
 
 # notez qu'on import la lib
 # donc assurez-vous que l'importe n'a pas d'effet de bord
@@ -11,14 +9,17 @@ import os
 
 from icclim import __version__
 
-module1 = Extension('libC',
-                sources = ['./icclim/libC.c'])
+
+from setuptools import setup, Extension, find_packages, Command
 
 setup(
  
     # le nom de votre bibliotheque, tel qu'il apparaitre sur pypi
     name='icclim',
- 
+    ext_modules = [Extension('libC.so',
+    library_dirs = ['/usr/local/lib'],
+    sources=['./icclim/libC.c'])],
+
     # la version du code
     
     version=__version__,
@@ -44,7 +45,6 @@ setup(
     # Une description longue, sera affichee pour presenter la lib
     # Generalement on dump le README ici
     long_description=open('README.md').read(),
-    ext_modules = [module1],
 
     # Vous pouvez rajouter une liste de dependances pour votre lib
     # et meme preciser une version. A l'installation, Python essayera de
