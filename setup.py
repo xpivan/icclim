@@ -1,36 +1,35 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
- 
-from setuptools import setup, find_packages, Command
-from distutils.core import Extension
-
 # notez qu'on import la lib
 # donc assurez-vous que l'importe n'a pas d'effet de bord
 #import icclim
+
 import os
 
 from icclim import __version__
 
-module1 = Extension('libC',
-                sources = ['./icclim/libC.c'])
+#from distutils.core import setup, Extension, Command
 
-<<<<<<< HEAD
+from setuptools import setup, Extension, find_packages, Command
+import pdb
+lib_path = os.getenv('PATH').split(os.pathsep)[0][:-3]+'lib/site-packages/'
+os.system('gcc -fPIC -g -c -Wall ./icclim/libC.c -o ./icclim/libC.o')
+os.system('gcc -shared -o ./icclim/libC.so ./icclim/libC.o')
+
 module1 = Extension('libC',
                 sources = ['./icclim/libC.c'])
 
 # Ceci n'est qu'un appel de fonction. Mais il est treeeeeeeeeees long
 # et il comporte beaucoup de parametres
-=======
->>>>>>> 72e15b1b8ec9684ac33278363a3572f033ad9c4b
 setup(
  
     # le nom de votre bibliotheque, tel qu'il apparaitre sur pypi
     name='icclim',
- 
-    # la version du code
     
+    #include_dirs = ['/usr/local/include']
+    #library_dirs = [lib_path],
+    # la version du code
     version=__version__,
- 
     # Liste les packages a inserer dans la distribution
     # plutot que de le faire a la main, on utilise la foncton
     # find_packages() de setuptools qui va cherche tous les packages
@@ -54,11 +53,7 @@ setup(
     # Une description longue, sera affichee pour presenter la lib
     # Generalement on dump le README ici
     long_description=open('README.md').read(),
-    ext_modules = [module1],
-<<<<<<< HEAD
-=======
 
->>>>>>> 72e15b1b8ec9684ac33278363a3572f033ad9c4b
     # Vous pouvez rajouter une liste de dependances pour votre lib
     # et meme preciser une version. A l'installation, Python essayera de
     # les telecharger et les installer.
@@ -80,6 +75,8 @@ setup(
     # La liste des marqueurs autorisees est longue, alors je vous
     # l'ai mise sur 0bin: http://is.gd/AajTjj
     #
+    
+
     # Il n'y a pas vraiment de regle pour le contenu. Chacun fait un peu
     # comme il le sent. Il y en a qui ne mettent rien.
     classifiers=[
@@ -93,7 +90,8 @@ setup(
         "Topic :: Climate Index",
     ],
  
- 
+    #setup_requires=["pytest-runner"],
+    #tests_require=["pytest"], 
     # C'est un systeme de plugin, mais on s'en sert presque exclusivement
     # Pour creer des commandes, comme "django-admin".
     # Par exemple, si on veut creer la fabuleuse commande "proclame-sm", on
@@ -112,6 +110,6 @@ setup(
  
     # Il y a encore une chiee de parametres possibles, mais avec ca vous
     # couvrez 90% des besoins
- 
     #cmdclass={'install_all':Install_C_sharedLib}
 )
+
