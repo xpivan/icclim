@@ -11,24 +11,17 @@ import os
 
 from icclim import __version__
 
-#class Install_C_sharedLib(Command):
-#    description = ""
-#    user_options = []
-#
-#    def initialize_options(self): pass
-#    
-#    def finalize_options(self): pass
-#    
-#    def run(self):
-#        os.system('gcc -fPIC -g -c -Wall ./icclim/libC.c -o ./icclim/libC.o') # create libC.o
-#        os.system('gcc -shared -o ./icclim/libC.so ./icclim/libC.o') # create libC.so
-#        os.system('python setup.py install')
+module1 = Extension('libC',
+                sources = ['./icclim/libC.c'])
 
+<<<<<<< HEAD
 module1 = Extension('libC',
                 sources = ['./icclim/libC.c'])
 
 # Ceci n'est qu'un appel de fonction. Mais il est treeeeeeeeeees long
 # et il comporte beaucoup de parametres
+=======
+>>>>>>> 72e15b1b8ec9684ac33278363a3572f033ad9c4b
 setup(
  
     # le nom de votre bibliotheque, tel qu'il apparaitre sur pypi
@@ -62,6 +55,10 @@ setup(
     # Generalement on dump le README ici
     long_description=open('README.md').read(),
     ext_modules = [module1],
+<<<<<<< HEAD
+=======
+
+>>>>>>> 72e15b1b8ec9684ac33278363a3572f033ad9c4b
     # Vous pouvez rajouter une liste de dependances pour votre lib
     # et meme preciser une version. A l'installation, Python essayera de
     # les telecharger et les installer.
